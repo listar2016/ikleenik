@@ -2,7 +2,7 @@
   <footer>
     <div class="row m-0">
       <div class="col-12 bg-green">
-        <div class="col-lg-10 col-xl-6 mx-auto my-5 tomorrow-container">
+        <div class="col-xl-9 mx-auto my-5 tomorrow-container">
           <div class="left-quote">
             <img src="@/assets/img/left_round_quote.png" class="img-fluid"/>
           </div>
