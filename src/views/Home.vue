@@ -9,10 +9,10 @@
       </div>
     </div>
     <div class="row m-0">
-      <div class="col-md-6">
+      <div class="col-lg-6">
         <div class="home-main-content">
           <div class="bg-icon">
-            <img src="@/assets/img/mobile-phone.png"/>
+            <img src="@/assets/img/mobile-phone.png" class="img-fluid"/>
           </div>
           <h3>Next platform for digital health,</h3>
           <h1>We are working on it!</h1>
@@ -22,10 +22,10 @@
           <p>
             iKleeniK specializes in the provision of innovative digital healthcare solutions particularly in the areas of mobile health, big data and AI for health industry.
           </p>
-          <a href="#" class="btn btn-read-more">Read More</a>
+          <a href="#" class="btn btn-read-more px-4">Read More</a>
         </div>
       </div>
-      <div class="col-md-6 p-0">
+      <div class="col-lg-6 p-0">
         <img class="img-fluid" src="@/assets/img/home_1.png" />
       </div>
     </div>
@@ -130,11 +130,11 @@
         <p>
           Mo-fiD® is the world’s first interoperable and unifying multilingual mobile diabetes monitoring and self –management system with preferred native language options.
         </p>
-        <a href="#" class="btn btn-white">More</a>
+        <router-link class="btn btn-white" :to="{name: 'products'}">More</router-link>
       </div>
     </div>
     <div class="row m-0">
-      <div class="col-md-6 center-container bg-grey">
+      <div class="col-lg-6 center-container bg-grey">
         <div class="center-content bg-white">
           <div class="home-main-content">
             <div class="bg-icon">
@@ -150,15 +150,15 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 p-0">
+      <div class="col-lg-6 p-0">
         <img src="@/assets/img/home_2.png" class="img-fluid"/>
       </div>
     </div>
     <div class="row m-0">
-      <div class="col-md-6 p-0">
+      <div class="col-lg-6 p-0">
         <img src="@/assets/img/home_3.png" class="img-fluid"/>
       </div>
-      <div class="col-md-6 center-container bg-grey">
+      <div class="col-lg-6 center-container bg-grey">
         <div class="center-content bg-white">
           <div class="home-main-content">
             <div class="bg-icon">
@@ -263,14 +263,14 @@
       
     </div>
     <div class="row m-0">
-      <div class="col-lg-4 p-0 bg-dark text-white">
+      <div class="col-lg-6 col-xl-4 p-0 bg-dark text-white">
         <div class="one-span-container">
           <div class="one-span-content">
             <h1>Latest News<span class="text-green">...</span></h1>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 p-0" v-for="(news, index) in latestNews" :key="index">
+      <div class="col-lg-6 col-xl-4 p-0" v-for="(news, index) in latestNews" :key="index">
         <div class="one-span-container">
           <div class="one-span-content">
             <p>{{ news.location }} / {{ news.date }}</p>

@@ -13,7 +13,9 @@ body {
   .nav-item a {
     color: white;
   }
-  
+  &.navbar-dark .navbar-toggler-icon {
+    background-image: url('../img/navbar-icon.png');
+  }
 }
 /** Navbar end **/
 /** Slider **/
@@ -49,15 +51,10 @@ body {
       float: left;
     }
   }
+  
 }
 /** Slider end **/
 .home-main-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -15%;
-  transform: translate(-50%, -50%); 
-
   h3 {
     font-weight: lighter;
   }
@@ -67,10 +64,8 @@ body {
   }
   .hr-container {
     width: 100px;
-    margin: 2rem 0;
     hr {
-      background-color: $green-color;
-      height: 2px;
+      border-top: 3px solid $green-color;
     }
   }
   &.span-content {
@@ -86,7 +81,7 @@ body {
   background-color: $bg-color;
   line-height: 100px;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
 .bg-grey {
   background-color: $grey-color;
@@ -105,14 +100,17 @@ body {
 .text-green {
   color: $green-color;
 }
+.btn {
+  text-transform: uppercase;
+}
 .btn-white {
   background-color: white;
-  color: $green-color;
+  color: $bg-color;
 }
 .btn-read-more {
   background-color: $green-color;
   color: white;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .read-more-link {
   color: $dark-grey-color;
@@ -124,7 +122,7 @@ body {
 
 .one-span-container {
   position: relative;
-  min-height: 400px;
+  min-height: 350px;
   border: 1px solid $grey-color;
   .one-span-content {
     margin: 0;
@@ -167,16 +165,6 @@ body {
     width: 100px;
     height: 2px;
   }
-  .product-img-container{
-    position: relative;
-    .product-img {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-    }
-  }
- 
   .product-description {
     .logo-content {
       height: 50px;
@@ -224,6 +212,18 @@ body {
     }
   }
 }
+
+.products-title-container {
+  background-color: $green-color;
+  text-align: center;
+  hr {
+    background: white;
+    width: 100px;
+    height: 2px;
+  }
+}
+
+/** Footer Style**/
 .tomorrow-container {
   .left-quote {
     float: left;
@@ -246,17 +246,6 @@ body {
     }
   }
 }
-.products-title-container {
-  background-color: $green-color;
-  text-align: center;
-  hr {
-    background: white;
-    width: 100px;
-    height: 2px;
-  }
-}
-
-/** Footer Style**/
 .logo-copyright {
   p {
     color: #666666;
@@ -298,6 +287,7 @@ body {
     hr {
       border-color: $green-color;
       border-top-width: 2px;
+      margin: 0.5rem 0;
     }
   }
   // .one-products-content {
@@ -305,4 +295,116 @@ body {
   //  }
 }
 
+/** Blog Style **/
+  .blog-green-back {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color: $green-color;
+  }
+  .one-blog-container {
+    h3 {
+      margin: 1rem 0;
+    }
+    .blog-action {
+      .blog-date {
+        margin-right: 5px;
+      }
+      .blog-comment {
+        margin: 0 3px;
+        &:before {
+          content: url('../img/ic_comment.png');
+          margin: 0 2px;
+        }
+      }
+      .blog-favorite {
+        margin: 0 3px;
+        &:before {
+          content: url('../img/ic_favorite.png');
+          margin: 0 2px;
+        }
+      }
+      .read-more-link {
+        float: right;
+        color: $green-color;
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+/** Blog End **/
 
+/** Career Style **/
+.career-slider {
+  .slider-text {
+    left: 10%;
+    margin-right: 20%;
+    transform: translateY(-50%);
+  }
+  .hr-container {
+    width: 120px;
+    hr {
+      margin-top: 0;
+    }
+  }
+  p {
+    color: $dark-grey-color;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .btn-white {
+    margin-top: 3%;
+  }
+}
+
+.career-container {
+  background: url('../img/careers.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 5rem 0;
+  .career-img-container {
+    .career-img {
+      float: right;
+      width: 300px;
+      height: 300px;
+      background-color: $green-color;
+      border-radius: 50%;
+      line-height: 300px;
+      text-align: center;
+      img {
+        width: 50%;
+      }
+    }
+  }
+  .career-description {
+    padding: 0 10% 0 5%;
+    h1 {
+      font-weight: lighter;
+    }
+    .hr-container {
+      width: 100px;
+      hr {
+        border-top: 3px solid $green-color;
+      }
+    }
+  }
+}
+/** Career End **/
+.contact-form {
+  .form-group {
+    .form-control {
+      background-color: #eeeeee;
+    }
+  }
+}
+.modal-product {
+  display: block;
+  .modal-body {
+    max-height: 500px;
+    overflow: auto;
+  }
+}
+.vm-back-top-inner {
+  background-color: $green-color;
+}

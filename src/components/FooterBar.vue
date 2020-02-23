@@ -30,19 +30,16 @@
             </div>
             <ul>
               <li>
-                <a class="nav-link" href="#">Products</a>
+                <router-link class="nav-link" :to="{name: 'products'}">Products</router-link>
               </li>
               <li>
-                <a class="nav-link" href="#">Profie</a>
+                <router-link class="nav-link" :to="{name: 'blog'}">Blog</router-link>
               </li>
               <li>
-                <a class="nav-link" href="#">Research</a>
+                <router-link class="nav-link" :to="{name: 'career'}">Careers</router-link>
               </li>
               <li>
-                <a class="nav-link" href="#">Careers</a>
-              </li>
-              <li>
-                <a class="nav-link" href="#">Contact Us</a>
+                <router-link class="nav-link" :to="{name: 'contact'}">Contact Us</router-link>
               </li>
             </ul>
           </div>

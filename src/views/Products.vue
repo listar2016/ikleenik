@@ -17,11 +17,11 @@
     <div class="container">
       <div class="row m-0" v-for="(product, index) in productList" :key="index">
         <div class="row col-12 m-0 p-0" v-if="index % 2 ===0">
-          <div class="col-lg-6 p-0 bg-grey center-container">
-            <div class="center-content bg-white p-3">
+          <div class="col-lg-6 bg-grey center-container">
+            <div class="center-content bg-white py-3 px-4 px-lg-3 px-xl-4">
               <div class="one-products-container">
                 <div class="logo-container mb-1">
-                  <img :src="`/img/${product.logo}`"/>
+                  <img :src="`/img/${product.logo}`" class="img-fluid"/>
                 </div>
                 <div class="one-products-content">
                   <h2>{{ product.title }}</h2>
@@ -29,7 +29,13 @@
                     <hr/>
                   </div>
                   <p>{{ product.description }}</p>
-                  <a v-if="product.read_more" href="#" class="btn btn-read-more my-1">Read More</a>
+                  <a 
+                    v-if="product.read_more" 
+                    href="#" 
+                    class="btn btn-read-more my-1"
+                    @click.prevent="showDetail(product)">
+                    Read More
+                  </a>
                 </div>
               </div>
             </div>
@@ -42,11 +48,11 @@
           <div class="col-lg-6 p-0">
             <img :src="`/img/${product.image}`" class="img-fluid"/>
           </div>
-          <div class="col-lg-6 p-0 bg-grey center-container">
-            <div class="center-content bg-white p-3">
+          <div class="col-lg-6 bg-grey center-container">
+            <div class="center-content bg-white py-3 px-4 px-lg-3 px-xl-4">
               <div class="one-products-container">
                 <div class="logo-container mb-1">
-                  <img :src="`/img/${product.logo}`"/>
+                  <img :src="`/img/${product.logo}`" class="img-fluid"/>
                 </div>
                 <div class="one-products-content">
                   <h2>{{ product.title }}</h2>
@@ -54,7 +60,13 @@
                     <hr/>
                   </div>
                   <p v-html="product.description"></p>
-                  <a v-if="product.read_more" href="#" class="btn btn-read-more my-1">Read More</a>
+                  <a 
+                    v-if="product.read_more" 
+                    href="#" 
+                    class="btn btn-read-more my-1"
+                    @click.prevent="showDetail(product)">
+                    Read More
+                  </a>
                 </div>
               </div>
             </div>
@@ -62,10 +74,15 @@
         </div>
       </div> 
     </div>
+    <product-detail v-if="isShowDetail" :product="product" @close="isShowDetail = false"></product-detail>
   </div>
 </template>
 <script>
+import ProductDetail from '../components/ProductDetail.vue'
 export default {
+  components: {
+    ProductDetail
+  },
   data() {
     return {
       productList: [
@@ -109,7 +126,15 @@ export default {
           description: 'Jamel® is the first tailored pedometer app for people with diabetes to monitor daily walking or jogging besides burning calories, distance covered, active time, as well as average speed per hour.',
           full_description: 'Jamel® is the first tailored pedometer app for people with diabetes to monitor daily walking or jogging besides burning calories, distance covered, active time, as well as average speed per hour.<br/>Besides pedometering, Jamel® advises the weather condition, measures heart rate and checks health condition periodically while exercising.<br/>Jamel® comes with a simple and sleek interface, which makes it quite easy to use. Moreover, the app gives the user the option to import all fitness data from Google Fit , iWatch and sync with most common fitness watches and bands like Fitbit.<br/>Jamel® premium subscription allows the user free access to Mo-fiD®POD, a diabetes self-management portal developed by iKleeniK to help the user monitor blood glucose, activities, diet, water, medications, weight control and much more! Jamel® synchronizes with Mo-fiD®POD portal via secure HIPAA compliance cloud server. This particular offering is known for its widget that sits on user’s home screen giving a constant view of all the user needs to know for better diabetes self-management.'
         },
-      ]
+      ],
+      product: {},
+      isShowDetail: false
+    }
+  },
+  methods: {
+    showDetail(val) {
+      this.product = val
+      this.isShowDetail = true
     }
   }
 }

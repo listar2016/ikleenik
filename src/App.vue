@@ -3,6 +3,7 @@
     <nav-bar></nav-bar>
     <router-view/>
     <footer-bar></footer-bar>
+    <vm-back-top></vm-back-top>
   </div>
 </template>
 <script>
