@@ -7,51 +7,50 @@
             <img src="@/assets/img/left_round_quote.png" class="img-fluid"/>
           </div>
           <div class="right-text">
-            <h1>We have a vision for better healthcare tomorrow.</h1>
+            <h1>{{ $t('footer.title') }}</h1>
             <div class="hr-container">
               <hr/>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
     <div class="row m-0 bg-dark py-5 px-md-2 px-lg-5">
       <div class="col-lg-5 logo-copyright">
-        <img src="@/assets/img/logo_white.png">
-        <p class="mt-3">© 2019 iKleeniK Limited, All Rights Reserved</p>
+        <img :src="imgLogo[$i18n.locale]">
+        <p class="mt-3">{{ $t('footer.copy_right') }}</p>
       </div>
       <div class="col-lg-7">
         <div class="row footer-link">
           <div class="col-md-4">
-            <h4>Quick Links</h4>
+            <h4>{{ $t('footer.quick_link') }}</h4>
             <div class="hr-container">
               <hr/>
             </div>
             <ul>
               <li>
-                <router-link class="nav-link" :to="{name: 'products'}">Products</router-link>
+                <router-link class="nav-link" :to="{name: 'products'}">{{ $t('menu.products') }}</router-link>
               </li>
               <li>
-                <router-link class="nav-link" :to="{name: 'blog'}">Blog</router-link>
+                <router-link class="nav-link" :to="{name: 'blog'}">{{ $t('menu.blog') }}</router-link>
               </li>
               <li>
-                <router-link class="nav-link" :to="{name: 'career'}">Careers</router-link>
+                <router-link class="nav-link" :to="{name: 'career'}">{{ $t('menu.careers') }}</router-link>
               </li>
               <li>
-                <router-link class="nav-link" :to="{name: 'contact'}">Contact Us</router-link>
+                <router-link class="nav-link" :to="{name: 'contact'}">{{ $t('menu.contact') }}</router-link>
               </li>
             </ul>
           </div>
           <div class="col-md-8">
-            <h4>Newsletter</h4>
+            <h4>{{ $t('footer.newsletter') }}</h4>
             <div class="hr-container">
               <hr/>
             </div>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Email..." aria-label="Email...">
+              <input type="text" class="form-control" :placeholder="$t('footer.email')" :aria-label="$t('footer.email')">
               <div class="input-group-append">
-                <a href="#" class="btn btn-success text-uppercase">Subscribe</a>
+                <a href="#" class="btn btn-success text-uppercase">{{ $t('footer.subscribe') }}</a>
               </div>
             </div>
           </div>
@@ -61,7 +60,16 @@
   </footer>
 </template>
 <script>
+import imgLogo_en from '@/assets/img/logo_white.png'
+import imgLogo_ar from '@/assets/img/logo_white_ar.png'
 export default {
-  
+  data() {
+    return {
+      imgLogo: {
+        en: imgLogo_en,
+        ar: imgLogo_ar
+      }
+    }
+  },
 }
 </script>

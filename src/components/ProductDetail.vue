@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">{{ product.title }}</h5>
+          <h5 class="modal-title">{{ product.title[$i18n.locale] }}</h5>
           <button type="button" class="close" aria-label="Close" @click="$emit('close')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -11,19 +11,19 @@
         <div class="modal-body">
           <div class="one-products-container">
             <div class="logo-container mb-1">
-              <img :src="`/img/${product.logo}`" class="img-fluid"/>
+              <img :src="`/img/${product.logo[$i18n.locale]}`" class="img-fluid"/>
             </div>
             <div class="one-products-content">
-              <h2>{{ product.title }}</h2>
+              <h2>{{ product.title[$i18n.locale] }}</h2>
               <div class="hr-container">
                 <hr/>
               </div>
-              <p v-html="product.full_description"></p>
+              <p v-html="product.full_description[$i18n.locale]"></p>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-read-more" @click="$emit('close')">Hide</button>
+          <button type="button" class="btn btn-read-more" @click="$emit('close')">{{ $t('menu.hide')}}</button>
         </div>
       </div>
     </div>

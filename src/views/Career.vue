@@ -3,12 +3,12 @@
     <div class="slider career-slider">
       <img class="img-fluid" src="@/assets/img/bg_4.png">
       <div class="slider-text">
-        <h1 class="font-weight-lighter">Careers</h1>
+        <h1 class="font-weight-lighter">{{ $t('menu.careers') }}</h1>
         <div class="hr-container">
           <hr/>
         </div>
-        <p>We are geared to growth and are always on the lookout for top-grade and experienced software and apps designers and developers. We offer you challenging tasks, leeway for your own initiatives, and favorable, inspirational oriented challenges so that you see the outcome of your achievements. If this appeals to you and you wish to join us, talk to us!</p>
-        <router-link class="btn btn-white" :to="{name: 'contact'}">Contact Us</router-link>
+        <p>{{ $t('careers.description') }}</p>
+        <router-link class="btn btn-white" :to="{name: 'contact'}">{{ $t('menu.contact') }}</router-link>
       </div>
     </div>
     <div class="row m-0 career-container">
@@ -18,15 +18,13 @@
           </div>
       </div>
       <div class="col-lg-8 career-description">
-        <h1>Application</h1>
+        <h1>{{ $t('careers.application_title') }}</h1>
         <div class="hr-container">
           <hr/>
         </div>     
-        <p>
-          Have you been unable to find any suitable vacancies? Then impress us with your speculative application. As a global player in the consultancy business, we are able to offer talented people perspectives and development opportunities within the Fichtner Group.<br/>Apply at Fichtner with your comprehensive application together with a brief cover letter.
-        </p>
-        <p>We look forward to receiving your application.</p>
-        <router-link class="btn btn-read-more" :to="{name: 'contact'}">Conatct Us</router-link>
+        <p>{{ $t('careers.application_desc_1') }}</p>
+        <p>{{ $t('careers.application_desc_2') }}</p>
+        <router-link class="btn btn-read-more" :to="{name: 'contact'}">{{ $t('menu.contact') }}</router-link>
       </div>
     </div>
   </div>

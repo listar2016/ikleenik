@@ -1,0 +1,79 @@
+{
+  "menu": {
+    "products": "Products",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact Us",
+    "lang": "عربي",
+    "read_more": "Read More",
+    "more": "More",
+    "hide": "Hide",
+    "show_more": "Show More"
+  },
+  "home": {
+    "slider_title": "We Push Ourselves",
+    "slider_subtitle": "to find better digital health solutions through insight, innovation and integration",
+    "working_subtitle": "Next platform for digital health,",
+    "working_title": "We are working on it!",
+    "working_desc": "iKleeniK specializes in the provision of innovative digital healthcare solutions particularly in the areas of mobile health, big data and AI for health industry.",
+    "working_full_desc_1": "iKleeniK specializes in the provision of innovative digital healthcare solutions particularly in the areas of mobile health, big data and AI for health industry.",
+    "working_full_desc_2": "At iKleeniK, we are working on a broad range of technologies to make health information more accessible beyond traditional care settings including mHealth, big data, artificial intelligence systems for digital diagnostics, digital therapeutics and clinical decision support solutions, as well as the advanced algorithms that are increasingly capable of supporting those solutions. At our core R&D, we believe digital health represents a much-needed connection between data science and healthcare, one that more comprehensively connects the dots for better, more informed health decisions and more personalized patient care.",
+    "working_full_desc_3": "The true potential of iKleenik digital health strategy go much further than the sum of its individual parts to integrated digital health solutions which can harness the power of connectivity and interoperability in ways health industry has never seen before by applying the innovation in digital technologies to break down the information and workflow silos that exist in healthcare today, filling in blanks between diagnostic, treatment and outcomes data, allowing physicians to better manage care at the individual patient level rather than at a disease level more efficiently and effectively while allowing patients to better manage their own health and become more actively involved in their own healthcare.",
+    "cat_1_title": "Deep Learning",
+    "cat_1_desc": "It is so cool to make it so hard!",
+    "cat_2_title": "Cognitive Evolvement",
+    "cat_2_desc": "We find ways to turn concepts into objects!",
+    "cat_3_title": "Big Data",
+    "cat_3_desc": "Building data subways for next healthcare industry",
+    "span_of": "Span of",
+    "expertise": "Expertise",
+    "products_title": "Products",
+    "products_klatu": "Klatu",
+    "products_desc": "Mo-fiD® is the world’s first interoperable and unifying multilingual mobile diabetes monitoring and self –management system with preferred native language options.",
+    "innovation_title": "Innovation",
+    "innovation_desc": "Development of mobile devices is the key driving force behind our research vision at iKleeniK . We believe the role of 5G together with smart wearable sensors will play pivotal role in the future of personalized healthcare systems and be part of everyday life for many people.",
+    "research_title": "Research",
+    "research_desc": "Our people are the driving force behind our achievements. We are committed to continue conducting leading research in the key challenging domains of digital health and big data analytics.",
+    "wedo_title": "What we do?",
+    "wedo_1_title": "Mobile Health Solutions",
+    "wedo_1_desc": "We have the passion in developing mobile health and IoT solutions for personalized healthcare service providers.",
+    "wedo_2_title": "Chronic Disease Management",
+    "wedo_2_desc": "Our research work is currently focusing on developing innovative chronic disease management software and apps for patient and clinicians.",
+    "wedo_3_title": "Digital Clinic Portals",
+    "wedo_3_desc": "We are specialized in design and development of integrated clinical management systems supported to support medical equipment.",
+    "wedo_4_title": "Electronic Patient Record",
+    "wedo_4_desc": "We have extensive experience in developing EPR as an alternative of paper medical record to manage personal life-long health and health care information",
+    "wedo_5_title": "Wellbeing Mobile Apps",
+    "wedo_5_desc": "We take mobile wellbeing apps for smart devices to the next level for patients behavior change.",
+    "wedo_6_title": "Assistive Technologies",
+    "wedo_6_desc": "We are committed to work with our communities on developing assistive technologies that allow individuals to assist people with special needs using artificial intelligence (AI) technologies.",
+    "latest_news": "Latest News"
+  },
+  "footer": {
+    "title": "We have a vision for better healthcare tomorrow.",
+    "copy_right": "© 2019 iKleeniK Limited, All Rights Reserved",
+    "quick_link": "Quick Links",
+    "newsletter": "Newsletter",
+    "email": "Email...",
+    "subscribe": "Subscribe"
+  },
+  "products": {
+    "title": "Products",
+    "sub_title": "What we have developed?",
+    "description": "iKleeniK current focus is on interfacing of personal medical devices for chronic disease management using smart mobile and low energy Bluetooth® technologies as part of our strategy in development of digital healthcare industry"
+  },
+  "contact": {
+    "name": "Name...",
+    "email": "Email...",
+    "subject": "Subject...",
+    "message": "Message...",
+    "send": "Send"
+  },
+  "careers": {
+    "description" : "We are geared to growth and are always on the lookout for top-grade and experienced software and apps designers and developers. We offer you challenging tasks, leeway for your own initiatives, and favorable, inspirational oriented challenges so that you see the outcome of your achievements. If this appeals to you and you wish to join us, talk to us!",
+    "application_title": "Application",
+    "application_desc_1": "Have you been unable to find any suitable vacancies? Then impress us with your speculative application. As a global player in the consultancy business, we are able to offer talented people perspectives and development opportunities within the Fichtner Group.    Apply at Fichtner with your comprehensive application together with a brief cover letter.",
+    "application_desc_2": "We look forward to receiving your application."
+  }
+
+}
