@@ -76,6 +76,12 @@ body.rtl {
       padding: 0 5% 0 10%;
     }
   }
+  .career-slider .slider-text {
+    left: initial;
+    right: 10%;
+    margin-right: initial;
+    margin-left: 20%;
+  }
   @media (max-width: 767.98px) {
     .tomorrow-container {
       .left-quote {
