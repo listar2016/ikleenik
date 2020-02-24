@@ -398,11 +398,40 @@ body {
     }
   }
 }
-.modal-product {
+.modal {
   display: block;
   .modal-body {
     max-height: 500px;
     overflow: auto;
+    padding: 1rem 3rem;
+  }
+  &.modal-home-working {
+    .modal-body {
+      h3 {
+        font-weight: lighter;
+      }
+      h1 {
+        color: $green-color;
+        font-weight: lighter;
+      }
+      .hr-container {
+        width: 100px;
+        hr {
+          border-top: 3px solid $green-color;
+        }
+      }
+    }
+  }
+  ul.li-green-color{
+    list-style: none;
+    li::before {
+      color: $green-color;
+      content: "\2022";
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: -1em;
+    }
   }
 }
 .vm-back-top-inner {

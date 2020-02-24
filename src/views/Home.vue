@@ -22,7 +22,7 @@
           <p>
             iKleeniK specializes in the provision of innovative digital healthcare solutions particularly in the areas of mobile health, big data and AI for health industry.
           </p>
-          <a href="#" class="btn btn-read-more px-4">Read More</a>
+          <a href="#" class="btn btn-read-more px-4" @click.prevent="isShowHomeWorking = true">Read More</a>
         </div>
       </div>
       <div class="col-lg-6 p-0">
@@ -66,39 +66,15 @@
       </div>
       <div class="col-lg-6 col-xl-8 p-0">
         <div class="row m-0">
-          <div class="col-xl-6 p-0">
+          <div class="col-xl-6 p-0" v-for="(spanEx, index) in spanExpertiseList" :key="index">
             <div class="one-span-container">
               <div class="one-span-content">
-                <h4>Advanced IoT technology</h4>
+                <h4>{{ spanEx.title }}</h4>
                 <div class="hr-container">
                   <hr/>
                 </div>
-                <p>Our team brings together a wide spectrum of IoT emerging technologies, business and innovation experience.</p>
-                <a href="#" class="read-more-link">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 p-0">
-            <div class="one-span-container">
-              <div class="one-span-content">
-                <h4>Digital Health Solutions</h4>
-                <div class="hr-container">
-                  <hr/>
-                </div>
-                <p>We are committed to provide digital innovative solutions to transform healthcare services into the next generation of digital clinics.</p>
-                <a href="#" class="read-more-link">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-6 p-0">
-            <div class="one-span-container">
-              <div class="one-span-content">
-                <h4>M-health-Solutions</h4>
-                <div class="hr-container">
-                  <hr/>
-                </div>
-                <p>Our mobile wireless capabilities and expertise including leading edge technology development in all mobile health.</p>
-                <a href="#" class="read-more-link">Read More</a>
+                <p v-html="spanEx.description"></p>
+                <a href="#" class="read-more-link" @click.prevent="showSpanExpertise(spanEx)">Read More</a>
               </div>
             </div>
           </div>
@@ -285,15 +261,26 @@
       </div>
     </div>
     
-    
+    <home-working 
+      v-if="isShowHomeWorking"
+      @closeHomeWorking="isShowHomeWorking = false">
+    </home-working>
+    <span-expertise
+      v-if="isSpanExpertise"
+      :spanEx="spanEx"
+      @closeSpanExpertise="isSpanExpertise = false">
+    </span-expertise>
   </div>
 </template>
 
 <script>
-
+import HomeWorking from '../components/HomeWorking.vue'
+import SpanExpertise from '../components/SpanExpertise.vue'
 export default {
   name: 'Home',
   components: {
+    HomeWorking,
+    SpanExpertise
   },
   data() {
     return {
@@ -328,7 +315,33 @@ export default {
           title: 'Consequuntur dolores eos qui ratione voluptatem',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...'
         },
-      ]
+      ],
+      isShowHomeWorking: false,
+      isSpanExpertise: false,
+      spanExpertiseList: [
+        {
+          title: 'Advanced IoT technology',
+          description: 'Our team brings together a wide spectrum of IoT emerging technologies, business and innovation experience.',
+          full_description: 'With many healthcare providers are struggling under the dual pressures of a growing demand for its services and chronic underfunding, the Internet of Things can help to make healthcare more efficient by equipping the patients with online sensors to monitor their environment and an internet connection to communicate, the Internet of Things gives healthcare providers greater ability to gather data on their patients and report back in real time. <br/><br/> The IoT presents big benefits for patient care by enabling hospitals to track and monitor patients from the moment they arrived at hospital -- or even in the home before that -- with real-time data from sensors being automatically added to patient records without the need for nurses to take readings or update charts. At a more prosaic level, our IoT vision is allow the healthcare provider to track the vitals more effectively. iKleeniK aims to help users to monitor their health and wellbeing, and alert health professionals to step in when needed. Mo-fiD®, our diabetes digital platform, is developed not only to help diabetics get a better handle on their condition, but has only a minimal IoT component, with links to internet-enabled glucose monitors.'
+        },
+        {
+          title: 'Digital Health Solutions',
+          description: 'We are committed to provide digital innovative solutions to transform healthcare services into the next generation of digital clinics.',
+          full_description: 'We are committed to provide digital innovative solutions to transform healthcare services into the next generation of digital clinics.'
+        },
+        {
+          title: 'M-health-Solutions',
+          description: 'Our mobile wireless capabilities and expertise including leading edge technology development in all mobile health.',
+          full_description: 'through secure cloud computing to allow users have seamless access to shared data, resources and common infrastructure over their healthcare providers’ network. We offer services on demand and carry out tasks that meet changing needs and standards. Our mHealth applications incorporates cloud computing technology and devices such as tablets and mobile phones to make medical information available anywhere at any time securely and easy to use.<br/><br/>Our range of applications and services supported by mHealth systems include:<ul class="li-green-color"><li>Mobile health for remote consultations</li><li>Storing and sharing of patient data</li><li>Personalized monitoring of vitals enhanced through interconnectedness with wearable devices</li><li>Location-based medical services to ensure delivery of locally-relevant information</li><li>Emergency response and management</li><li>Pervasive access to health care information.</li><li>But as mobile technology gathers pace, the possibilities may be limited only to our imagination.</li><ul>'
+        }
+      ],
+      spanEx: {}
+    }
+  },
+  methods: {
+    showSpanExpertise(val) {
+      this.spanEx = val
+      this.isSpanExpertise = true
     }
   }
 }
