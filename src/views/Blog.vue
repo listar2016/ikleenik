@@ -16,9 +16,9 @@
           <h3>{{ blog.title[$i18n.locale] }}</h3>
           <p>{{ blog.description[$i18n.locale] }}</p>
           <div class="blog-action">
-            <span class="blog-date">{{ blog.blog_date }}</span>
-            <span class="blog-comment">{{ blog.comment }}</span>
-            <span class="blog-favorite">{{ blog.favorite }}</span>
+            <span class="blog-date span-number">{{ blog.blog_date }}</span>
+            <span class="blog-comment span-number">{{ blog.comment }}</span>
+            <span class="blog-favorite span-number">{{ blog.favorite }}</span>
             <a href="#" class="read-more-link">{{ $t('menu.read_more') }}</a>
           </div>
         </div>

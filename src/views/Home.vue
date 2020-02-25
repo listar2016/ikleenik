@@ -100,8 +100,7 @@
       </div>
       <div class="col-md-7 product-description">
         <div class="logo-content">
-          <img src="@/assets/img/mofid_white.png"/>
-          <p>{{ $t('home.products_klatu') }}</p>
+          <img :src="imgMofidLogo[$i18n.locale]"/>
         </div>
         <p>
           {{ $t('home.products_desc') }}
@@ -249,7 +248,7 @@
       <div class="col-lg-6 col-xl-4 p-0" v-for="(news, index) in latestNews" :key="index">
         <div class="one-span-container">
           <div class="one-span-content">
-            <p>{{ news.location[$i18n.locale] }} / {{ news.date }}</p>
+            <p>{{ news.location[$i18n.locale] }} / <span class="span-number">{{ news.date }}</span></p>
             <h4>{{ news.title[$i18n.locale] }}</h4>
             <div class="hr-container">
               <hr/>
@@ -276,6 +275,8 @@
 <script>
 import HomeWorking from '../components/HomeWorking.vue'
 import SpanExpertise from '../components/SpanExpertise.vue'
+import imgMofidLogo_en from '@/assets/img/mofid_white.png'
+import imgMofidLogo_ar from '@/assets/img/mofid_white_ar.png'
 export default {
   name: 'Home',
   components: {
@@ -284,6 +285,10 @@ export default {
   },
   data() {
     return {
+      imgMofidLogo: {
+        en: imgMofidLogo_en,
+        ar: imgMofidLogo_ar
+      },
       latestNews: [
         {
           location: {
