@@ -7,7 +7,7 @@
         <hr/>
       </div>
     </div>
-    <div class="row py-5 px-3">
+    <div class="row m-0 py-5 px-3">
       <div class="col-lg-9 col-xl-6 mx-auto">
         <form class="contact-form">
           <div class="form-group">

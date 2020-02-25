@@ -20,7 +20,8 @@ body.rtl {
         margin-left: 20%;
       }
       .btn {
-        margin: 3rem 10% 2rem 0;
+        margin-left: 0;
+        margin-right: 10%;
       }
     }
   }
@@ -91,6 +92,27 @@ body.rtl {
       .right-text {
         margin-left: 0;
         margin-right: 4rem;
+      }
+    }
+    .product-container {
+      .product-description {
+        .btn {
+          margin-left: 0;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  @media (max-width: 991.98px) {
+    #navbarSupportedContent {
+      text-align: left;
+      left: 30px;
+    }
+    .career-container {
+      .career-img-container {
+        .career-img {
+          float: right;
+        }
       }
     }
   }

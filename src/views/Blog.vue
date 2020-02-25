@@ -9,7 +9,7 @@
     </div>
     <div class="row m-0">
       <div class="row m-0 blog-green-back">
-    </div>
+      </div>
       <div class="col-md-6 col-lg-4 col-xl-3" v-for="(blog, index) in showList" :key="index">
         <div class="one-blog-container py-3">
           <img :src="`/img/blog/${blog.url}`" class="img-fluid"/>
@@ -24,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row m-0">
       <div v-if="showCnt<this.blogList.length" class="mx-auto">
         <a href="#" class="btn btn-read-more" @click.prevent="showMore">{{ $t('menu.show_more') }}</a>
       </div>
