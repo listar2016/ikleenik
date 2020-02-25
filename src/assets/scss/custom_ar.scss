@@ -1,4 +1,17 @@
+@font-face {
+  font-family: 'Gess Two Medium';
+  src: url('../font/GE_SS_Two_Medium.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gess Two Light';
+  src: url('../font/GE_SS_Two_Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
 body.rtl {
+  font-family: 'Gess Two Light';
   text-align: right;
   .mr-auto {
     margin-left: auto !important;
