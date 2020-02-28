@@ -9,6 +9,9 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item" :class="{'active': currentPage.includes('home')}">
+          <router-link class="nav-link" :to="{name: 'home'}">{{ $t('menu.main') }}</router-link>
+        </li>
         <li class="nav-item" :class="{'active': currentPage.includes('products')}">
           <router-link class="nav-link" :to="{name: 'products'}">{{ $t('menu.products') }}</router-link>
         </li>
@@ -24,7 +27,7 @@
       </ul>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" @click.prevent="changeLang">{{ $t('menu.lang') }}</a>
+          <a class="nav-link lang-link" href="#" @click.prevent="changeLang">{{ $t('menu.lang') }}</a>
         </li>
       </ul>
     </div>

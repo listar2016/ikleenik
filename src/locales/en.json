@@ -1,5 +1,6 @@
 {
   "menu": {
+    "main": "Main",
     "products": "Products",
     "blog": "Blog",
     "careers": "Careers",
@@ -51,7 +52,7 @@
   },
   "footer": {
     "title": "We have a vision for better healthcare tomorrow.",
-    "copy_right": "© 2019 iKleeniK Limited, All Rights Reserved",
+    "copy_right": "iKleeniK Limited, All Rights Reserved",
     "quick_link": "Quick Links",
     "newsletter": "Newsletter",
     "email": "Email...",
@@ -59,7 +60,7 @@
   },
   "products": {
     "title": "Products",
-    "sub_title": "What we have developed?",
+    "sub_title": "What we have developed",
     "description": "iKleeniK current focus is on interfacing of personal medical devices for chronic disease management using smart mobile and low energy Bluetooth® technologies as part of our strategy in development of digital healthcare industry"
   },
   "contact": {
@@ -71,8 +72,8 @@
   },
   "careers": {
     "description" : "We are geared to growth and are always on the lookout for top-grade and experienced software and apps designers and developers. We offer you challenging tasks, leeway for your own initiatives, and favorable, inspirational oriented challenges so that you see the outcome of your achievements. If this appeals to you and you wish to join us, talk to us!",
-    "application_title": "Application",
-    "application_desc_1": "Have you been unable to find any suitable vacancies? Then impress us with your speculative application. As a global player in the consultancy business, we are able to offer talented people perspectives and development opportunities within the Fichtner Group.    Apply at Fichtner with your comprehensive application together with a brief cover letter.",
+    "application_title": "Graduates",
+    "application_desc_1": "Impress us with your speculative skills. We are always interested to hear from talented and enthusiastic young graduates. Apply at iKleeniK with your comprehensive application together with a brief cover letter.",
     "application_desc_2": "We look forward to receiving your application."
   }
 

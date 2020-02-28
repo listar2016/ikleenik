@@ -22,7 +22,8 @@
           <p>
             {{ $t('home.working_desc') }}
           </p>
-          <a href="#" class="btn btn-read-more px-4" @click.prevent="isShowHomeWorking = true">{{ $t('menu.read_more') }}</a>
+          <!-- <a href="#" class="btn btn-read-more px-4" @click.prevent="isShowHomeWorking = true">{{ $t('menu.read_more') }}</a> -->
+          <router-link class="btn btn-read-more px-4" :to="{name: 'products'}">{{ $t('menu.read_more') }}</router-link>
         </div>
       </div>
       <div class="col-lg-6 p-0">
@@ -58,8 +59,8 @@
       <div class="col-lg-6 col-xl-4 p-0 bg-primary">
         <div class="home-main-content span-content">
           <h1 class="text-white">{{ $t('home.span_of') }}</h1>
-          <h1>{{ $t('home.expertise') }}</h1>
-          <div class="hr-container">
+          <h1 class="text-white">{{ $t('home.expertise') }}</h1>
+          <div class="hr-container text-white">
             <hr/>
           </div>
         </div>
@@ -347,7 +348,7 @@ export default {
             ar: 'لدينا قدرات وخبرات خاصة بشبكات المحمول اللاسلكية  بما في ذلك تطوير التكنولوجيا الرائدة في جميع مجالات الصحة الجوالة.'
           },
           full_description: {
-            en: 'through secure cloud computing to allow users have seamless access to shared data, resources and common infrastructure over their healthcare providers’ network. We offer services on demand and carry out tasks that meet changing needs and standards. Our mHealth applications incorporates cloud computing technology and devices such as tablets and mobile phones to make medical information available anywhere at any time securely and easy to use.<br/><br/>Our range of applications and services supported by mHealth systems include:<ul class="li-green-color"><li>Mobile health for remote consultations</li><li>Storing and sharing of patient data</li><li>Personalized monitoring of vitals enhanced through interconnectedness with wearable devices</li><li>Location-based medical services to ensure delivery of locally-relevant information</li><li>Emergency response and management</li><li>Pervasive access to health care information.</li><ul>But as mobile technology gathers pace, the possibilities may be limited only to our imagination.',
+            en: 'through secure cloud computing to allow users have seamless access to shared data, resources and common infrastructure over their healthcare providers’ network. We offer services on demand and carry out tasks that meet changing needs and standards. Our mHealth applications incorporates cloud computing technology and devices such as tablets and mobile phones to make medical information available anywhere at any time securely and easy to use.<br/><br/>Our range of applications and services supported by mHealth systems include:<ul class="li-green-color"><li>Mobile health for remote consultations</li><li>Storing and sharing of patient data</li><li>Personalized monitoring of vitals enhanced through interconnectedness with wearable devices</li><li>Location-based medical services to ensure delivery of locally-relevant information</li><li>Emergency response and management</li><li>Pervasive access to health care information.</li></ul>But as mobile technology gathers pace, the possibilities may be limited only to our imagination.',
             ar: 'من خلال الحوسبة السحابية الآمنة للسماح للمستخدمين بالوصول السلس إلى البيانات والموارد والبنية التحتية المشتركة عبر شبكة مزودي الرعاية الصحية الخاصة بهم. نحن نقدم خدمات حسب الطلب وننفذ المهام التي تلبي الاحتياجات والمعايير المتغيرة. تتضمن تطبيقات الصحة الجوالة الخاصة بنا تكنولوجيا الحوسبة السحابية والأجهزة مثل الأجهزة اللوحية (التابلت) والهواتف المحمولة لتوفير المعلومات الطبية في أي مكان وفي أي وقت بشكل آمن وسهل الاستخدام.<br/><br/>تشمل مجموعة التطبيقات والخدمات التي تدعمها أنظمة الصحة الجوالة ما يلي:<ul class="li-green-color"><li>الصحة الجوالة للاستشارات عن بعد</li><li>تخزين و مشاركة بيانات المريض</li><li>رصد شخصي للعلامات الحيوية من خلال الاتصال مع الأجهزة القابلة للارتداء.</li><li>خدمات طبية تعتمد على الموقع لضمان تقديم المعلومات ذات الصلة محليًا</li><li>الاستجابة لحالات الطوارئ وإدارتها</li><li>وصول واسع النطاق إلى معلومات الرعاية الصحية.</li></ul>ولكن مع تزايد تكنولوجيا الهاتف المحمول ، قد تكون الإمكانيات محدودة فقط بخيالنا.'
           }
         }

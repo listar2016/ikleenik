@@ -72,6 +72,12 @@ body {
   &.span-content {
     h1 {
       font-size: 4rem;
+      color: white;
+    }
+    .hr-container {
+      hr {
+        border-top: 3px solid white;
+      }
     }
   }
 }
@@ -438,6 +444,9 @@ body {
 }
 .span-number {
   font-family: 'Lato' !important;
+}
+.lang-link {
+  font-family: 'Gess Two Light' !important;
 }
 .vm-back-top-inner {
   background-color: $green-color !important;

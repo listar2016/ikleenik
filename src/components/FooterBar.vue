@@ -18,7 +18,7 @@
     <div class="row m-0 bg-dark py-5 px-md-2 px-lg-5">
       <div class="col-lg-5 logo-copyright">
         <img :src="imgLogo[$i18n.locale]">
-        <p class="mt-3">{{ $t('footer.copy_right') }}</p>
+        <p class="mt-3"><span class="span-number">© 2019 - 2020</span> {{ $t('footer.copy_right') }}</p>
       </div>
       <div class="col-lg-7">
         <div class="row footer-link">
