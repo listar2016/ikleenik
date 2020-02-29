@@ -36,6 +36,17 @@
       }
     }
   }
+  .blog-detail {
+    padding: 20px 15px;
+    .blog-share-action {
+      .left-action {
+        float: left;
+      }
+      .like-title {
+        margin: 0 5px;
+      }
+    }
+  }
 }
 @media (min-width:768px) {
   .product-img-container{

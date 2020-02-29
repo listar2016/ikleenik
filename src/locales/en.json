@@ -9,7 +9,8 @@
     "read_more": "Read More",
     "more": "More",
     "hide": "Hide",
-    "show_more": "Show More"
+    "show_more": "Show More",
+    "leave": "Leave"
   },
   "home": {
     "slider_title": "We Push Ourselves",
@@ -75,6 +76,12 @@
     "application_title": "Graduates",
     "application_desc_1": "Impress us with your speculative skills. We are always interested to hear from talented and enthusiastic young graduates. Apply at iKleeniK with your comprehensive application together with a brief cover letter.",
     "application_desc_2": "We look forward to receiving your application."
+  },
+  "blog": {
+    "share": "Share",
+    "like": "Like",
+    "comments": "Comments",
+    "comment_dot": "Comment...",
+    "leave_a_comment": "Leave a Comment"
   }
-
 }

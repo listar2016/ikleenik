@@ -5,6 +5,7 @@ import Products from '../views/Products.vue'
 import Blog from '../views/Blog.vue'
 import Career from '../views/Career.vue'
 import Contact from '../views/Contact.vue'
+import BlogDetail from '../views/BlogDetail.vue'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,12 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: Contact
+  },
+  {
+    path: '/blog-detail',
+    name: 'blog-detail',
+    component: BlogDetail,
+    props: true
   }
 ]
 

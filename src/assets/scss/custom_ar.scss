@@ -99,7 +99,36 @@ body.rtl {
   .lang-link {
     font-family: 'Lato' !important;
   }
- 
+  .blog-detail {
+    .blog-share-action {
+      .like-title {
+        margin: 0 20px 0 5px;
+      }
+      .left-action {
+        float: left;
+        div, h5 {
+          float: right;
+        }
+      }
+      .right-action {
+        div, h5 {
+          float: right;
+        }
+      }
+    }
+  }
+  .comments-list {
+    .one-comment {
+      .icon-container {
+        float: right;
+      }
+      .comment-content{
+        float: right;
+        margin-left: 0px;
+        margin-right: 15px;
+      }
+    }
+  }
   @media (max-width: 767.98px) {
     .tomorrow-container {
       .left-quote {
@@ -116,6 +145,16 @@ body.rtl {
         .btn {
           margin-left: 0;
           margin-right: 20px;
+        }
+      }
+    }
+    .blog-detail {
+      .blog-share-action {
+        .left-action {
+          float: right;
+        }
+        .like-title {
+          margin: 0 5px;
         }
       }
     }
