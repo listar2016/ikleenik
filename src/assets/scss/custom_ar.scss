@@ -129,6 +129,13 @@ body.rtl {
       }
     }
   }
+  .navbar-brand {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+  .navbar-nav {
+    padding-right: 0;
+  }
   @media (max-width: 767.98px) {
     .tomorrow-container {
       .left-quote {
@@ -160,10 +167,10 @@ body.rtl {
     }
   }
   @media (max-width: 991.98px) {
-    #navbarSupportedContent {
-      text-align: left;
-      left: 30px;
-    }
+    // #navbarSupportedContent {
+    //   text-align: left;
+    //   left: 30px;
+    // }
     .career-container {
       .career-img-container {
         .career-img {

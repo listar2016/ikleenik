@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <nav-bar></nav-bar>
-    <router-view/>
-    <footer-bar></footer-bar>
-    <vm-back-top></vm-back-top>
+    <loading 
+			:active.sync="isLoading" 
+		></loading>
+    <div class="container-fluid" :class="{'no-loading': isLoading}">
+      <nav-bar></nav-bar>
+      <router-view/>
+      <footer-bar></footer-bar>
+      <vm-back-top></vm-back-top>
+    </div>
   </div>
 </template>
 <script>
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
+import Loading from 'vue-loading-overlay'
+import 'vue-loading-overlay/dist/vue-loading.css'
+import {mapState} from 'vuex'
 export default {
   components: {
     NavBar,
-    FooterBar
-  }
+    FooterBar,
+    Loading
+  },
+  computed: {
+		...mapState({
+      isLoading: state => state.status === 'loading'
+    })
+  },
 }
 </script>

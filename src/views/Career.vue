@@ -31,6 +31,13 @@
 </template>
 <script>
 export default {
-  
+  created() {
+    this.$store.dispatch('setStatus', 'loading')
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$store.dispatch('setStatus', '')
+    })
+  },
 }
 </script>

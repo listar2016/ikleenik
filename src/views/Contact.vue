@@ -23,7 +23,7 @@
             <textarea class="form-control" v-model="message" :placeholder="$t('contact.message')" rows=5></textarea>
           </div>
           <div class="form-group">
-            <button class="btn btn-read-more" type="submit" >{{ $t('contact.send') }}</button>
+            <button class="btn btn-read-more" @click="recaptcha">{{ $t('contact.send') }}</button>
           </div>
         </form>
       </div>
@@ -39,6 +39,21 @@ export default {
       subject: '',
       message: ''
     }
-  }
+  },
+  created() {
+    this.$store.dispatch('setStatus', 'loading')
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$store.dispatch('setStatus', '')
+    })
+  },
+  methods: {
+    async recaptcha() {
+      await this.$recaptchaLoaded()
+      const token = await this.$recaptcha('login')
+      console.log(token)
+    }
+  },
 }
 </script>

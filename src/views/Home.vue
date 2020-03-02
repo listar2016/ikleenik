@@ -12,7 +12,7 @@
       <div class="col-lg-6">
         <div class="home-main-content">
           <div class="bg-icon">
-            <img src="@/assets/img/mobile-phone.png" class="img-fluid"/>
+            <img src="@/assets/img/mobile-phone_1.png" style="width: 50%"/>
           </div>
           <h3>{{ $t('home.working_subtitle') }}</h3>
           <h1>{{ $t('home.working_title') }}</h1>
@@ -41,7 +41,7 @@
         </div>
         <div class="col-md-4 my-5">
           <div class="bg-icon mx-auto">
-            <img src="@/assets/img/cognitive_evolvement.png"/>
+            <img src="@/assets/img/cognitive_evolvement_1.png" style="width: 50%"/>
           </div>
           <h4>{{ $t('home.cat_2_title') }}</h4>
           <p>{{ $t('home.cat_2_desc') }}</p>
@@ -278,11 +278,17 @@ import HomeWorking from '../components/HomeWorking.vue'
 import SpanExpertise from '../components/SpanExpertise.vue'
 import imgMofidLogo_en from '@/assets/img/mofid_white.png'
 import imgMofidLogo_ar from '@/assets/img/mofid_white_ar.png'
+import {mapState} from 'vuex'
 export default {
   name: 'Home',
   components: {
     HomeWorking,
     SpanExpertise
+  },
+  computed: {
+    ...mapState({
+      initFlag: state => state.init_flag
+    })
   },
   data() {
     return {
@@ -354,6 +360,23 @@ export default {
         }
       ],
       spanEx: {}
+    }
+  },
+  created() {
+    this.$store.dispatch('setStatus', 'loading')
+  },
+  mounted() {
+    if (this.initFlag) {
+      this.$nextTick(() => {
+        this.$store.dispatch('setStatus', '')
+      })
+    } else {
+      document.onreadystatechange = () => { 
+        if (document.readyState == "complete") { 
+          this.$store.dispatch('setStatus', '')
+          this.$store.dispatch('setFlag')
+        } 
+      }
     }
   },
   methods: {

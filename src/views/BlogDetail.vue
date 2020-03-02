@@ -96,6 +96,14 @@ export default {
       email: '',
       comment: ''
     }
-  }
+  },
+  created() {
+    this.$store.dispatch('setStatus', 'loading')
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$store.dispatch('setStatus', '')
+    })
+  },
 }
 </script>

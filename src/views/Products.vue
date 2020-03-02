@@ -1,6 +1,6 @@
 <template>
   <div class="products">
-    <div class="slider products-slider text-center">
+    <div class="slider products-slider text-center loading">
       <img class="img-fluid" src="@/assets/img/bg_2.png">
       <div class="slider-text">
         <h1 class="font-weight-lighter">{{ $t('products.title') }}</h1>
@@ -148,7 +148,7 @@ export default {
           read_more: true,
           description: {
             en: 'myMofiD® App is an easy to use Android/iOS based application dedicated for Middle East patients in Arabic and English languages. It is designed to provide all the information the patient needs for self-management including blood glucose, food and water intake, activities performed and much more.',
-            ar: 'تطبيق ماي مو-فيد® هو تطبيق سهل الاستخدام يعمل بنظام  أندرويد / iOS   مخصص لمرضى الشرق الأوسط باللغتين العربية والإنجليزية. وهو مصمم لتوفير جميع المعلومات التي يحتاجها المريض لإدارة مرضه بشكل ذاتي بما في ذلك نسبة جلوكوز الدم ، وتناول الطعام والماء ، والأنشطة اليومية وغير ذلك الكثير.حيث إنه يقوم بإصدار إنذارات، إشعارات وتحذيرات عندما ينخفض أو يرتفع مستوى جلوكوز الدم عن المعدل الطبيعي. وقد تم تطويره خصيصا لمرضى الشرق الأوسط للعناية بصحتهم خلال شهر رمضان وموسم الحج والعمرة.'
+            ar: 'تطبيق ماي مو-فيد® هو تطبيق سهل الاستخدام يعمل بنظام  أندرويد / iOS   مخصص لمرضى الشرق الأوسط باللغتين العربية والإنجليزية. وهو مصمم لتوفير جميع المعلومات التي يحتاجها المريض لإدارة مرضه بشكل ذاتي بما في ذلك نسبة جلوكوز الدم ، وتناول الطعام والماء ، والأنشطة اليومية وغير ذلك الكثير.'
           },
           full_description: {
             en: 'myMofiD® App is an easy to use Android/iOS based application dedicated for Middle East patients in Arabic and English languages. It is designed to provide all the information the patient needs for self-management including blood glucose, food and water intake, activities performed and much more. It generates alarms, notifications and warnings when the blood glucose goes lower or higher than the normal range. It is specially customised for Middle Eastern patients to take care of their health during Ramadan fasting month, Hajj and Umrah.',
@@ -205,6 +205,14 @@ export default {
       product: {},
       isShowDetail: false
     }
+  },
+  created() {
+    this.$store.dispatch('setStatus', 'loading')
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$store.dispatch('setStatus', '')
+    })
   },
   methods: {
     showDetail(val) {

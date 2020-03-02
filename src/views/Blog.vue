@@ -76,7 +76,13 @@ export default {
     }
   },
   created() {
+    this.$store.dispatch('setStatus', 'loading')
     this.showMore()
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$store.dispatch('setStatus', '')
+    })
   },
   methods: {
     getBlogText(str) {
