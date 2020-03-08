@@ -7,7 +7,7 @@
         <hr/>
       </div>
     </div>
-    <div class="container">
+    <div class="container p-0">
       <div class="row m-0 products-title-container">
         <div class="col-xl-9 mx-auto py-5">
           <h1 class="font-weight-lighter">{{ $t('products.sub_title')}}</h1>
@@ -18,7 +18,7 @@
       <div class="row m-0" v-for="(product, index) in productList" :key="index">
         <div class="row col-12 m-0 p-0" v-if="index % 2 ===0">
           <div class="col-lg-6 bg-grey center-container">
-            <div class="center-content bg-white py-3 px-4 px-lg-3 px-xl-4">
+            <div class="center-content bg-white py-3 px-3 px-lg-3 px-xl-4">
               <div class="one-products-container">
                 <div class="logo-container mb-1">
                   <img @load="handleLoad" :src="`/img/${product.logo[$i18n.locale]}`" class="img-fluid"/>
@@ -88,8 +88,8 @@ export default {
       productList: [
         {
           logo: {
-            en: 'mofid_logo.png',
-            ar: 'mofid_logo_ar.png'
+            en: 'mofid_logo.svg',
+            ar: 'mofid_logo_ar.svg'
           },
           title: {
             en: 'Mo-fiD<sup>®</sup> Klatu',
@@ -111,12 +111,12 @@ export default {
         },
         {
           logo: {
-            en: 'mofid_logo.png',
-            ar: 'mofid_logo_ar.png'
+            en: 'mofid_logo.svg',
+            ar: 'mofid_logo_ar.svg'
           },
           title: {
             en: 'Mo-fiD<sup>®</sup> ClinicalBooth',
-            ar: 'مو-فيد<sup>®</sup>كلينيكال بوث'
+            ar: 'مو-فيد<sup>®</sup> كلينيكال بوث'
           },
           image: {
             en: 'product_2.png',
@@ -134,8 +134,8 @@ export default {
         },
         {
           logo: {
-            en: 'mofid_logo.png',
-            ar: 'mofid_logo_ar.png'
+            en: 'mofid_logo.svg',
+            ar: 'mofid_logo_ar.svg'
           },
           title: {
             en: 'myMo-fiD<sup>®</sup> App',
@@ -157,12 +157,12 @@ export default {
         },
         {
           logo: {
-            en: 'mofid_logo.png',
-            ar: 'mofid_logo_ar.png'
+            en: 'mofid_logo.svg',
+            ar: 'mofid_logo_ar.svg'
           },
           title: {
             en: 'Mo-fiD<sup>®</sup> POD',
-            ar: 'مو-فيد<sup>®</sup> بودبود'
+            ar: 'مو-فيد<sup>®</sup> بود'
           },
           image: {
             en: 'product_4.png',
@@ -180,8 +180,8 @@ export default {
         },
         {
           logo: {
-            en: 'jamel_logo.png',
-            ar: 'jamel_logo_ar.png'
+            en: 'jamel_logo.svg',
+            ar: 'jamel_logo_ar.svg'
           },
           title: {
             en: 'Jamel App',

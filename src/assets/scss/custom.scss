@@ -28,7 +28,7 @@ body {
   position: relative;
   margin-top: -77px;
   .slider-text {
-    margin: 0;
+    margin: 20px 0 0;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -527,4 +527,11 @@ body {
 }
 .vm-back-top-inner {
   background-color: $green-color !important;
+}
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+}
+.navbar-toggler-icon {
+  width: 1rem;
+  height: 1rem;
 }

@@ -3,8 +3,8 @@
     <div class="slider home-slider text-center">
       <img @load="handleLoad" class="img-fluid" src="@/assets/img/bg_1.png">
       <div class="slider-text">
-        <h1 class="font-weight-lighter">{{ $t('home.slider_title') }}</h1>
-        <h4 class="font-weight-lighter">{{ $t('home.slider_subtitle') }}</h4>
+        <h1 class="font-weight-lighter px-3">{{ $t('home.slider_title') }}</h1>
+        <h4 class="font-weight-lighter px-3">{{ $t('home.slider_subtitle') }}</h4>
         <hr/>
       </div>
     </div>
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="row m-0">
-      <div class="col-lg-6 col-xl-4 p-0 bg-primary">
+      <div class="col-lg-6 col-xl-4 p-0 bg-dark">
         <div class="home-main-content span-content">
           <h1 class="text-white">{{ $t('home.span_of') }}</h1>
           <h1 class="text-white">{{ $t('home.expertise') }}</h1>
@@ -305,7 +305,7 @@ export default {
           },
           description: {
             en: 'iKleeniK Limited is excited to announce the launch of mobile application Jamel<sup>®</sup>, the first Android and iOS fitness app for people with diabetes in English and Arabic.',
-            ar: 'يسر أيكلينيك المحدودة  ، نيوزيلندا أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل <sup>®</sup> ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
+            ar: 'يسر أيكلينيك المحدودة  ، أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل <sup>®</sup> ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
           }
         },
       ],

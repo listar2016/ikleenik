@@ -1,4 +1,5 @@
 @media (max-width: 767.98px) {
+  
   .tomorrow-container {
     .left-quote {
       width: 3rem;
@@ -16,6 +17,9 @@
       font-size: 3rem;
     }
     hr {
+      width: 70px;
+    }
+    .hr-container {
       width: 70px;
     }
   }
@@ -62,7 +66,7 @@
 }
 @media (max-width:991.98px) {
   .center-container {
-    padding: 30px;
+    padding: 15px;
   }
   .career-slider {
     .slider-text {
@@ -83,10 +87,11 @@
   .career-container {
     .career-img-container {
       .career-img {
-        float: left;
-        width: 250px;
-        height: 250px;
-        line-height: 250px;
+        float: none;
+        margin: auto;
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
       }
     }
   }

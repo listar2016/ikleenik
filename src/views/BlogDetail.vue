@@ -16,14 +16,14 @@
               <span class="blog-comment-lg span-number">{{ blog.comment }}</span>
               <span class="blog-favorite-lg span-number">{{ blog.favorite }}</span>
             </div>
-            <h2 class="text-center pt-3 px-2">{{ blog.title[$i18n.locale] }}</h2>
+            <h2 class="text-center pt-3 px-2" v-html="blog.title[$i18n.locale]"></h2>
             <hr/>
-            <h5 class="font-weight-lighter text-center px-2">{{ blog.description[$i18n.locale] }}</h5>
+            <h5 class="font-weight-lighter text-center px-2" v-html="blog.description[$i18n.locale]"></h5>
             <div class="blog-img text-center py-5">
               <img @load="handleLoad"  :src="`/img/blog/${blog.origin_img}`" class="img-fluid"/>
             </div>
             <div class="blog-content px-sm-5">
-              <p>{{ blog.content[$i18n.locale] }}</p>
+              <p v-html="blog.content[$i18n.locale]"></p>
             </div>
             <div class="row blog-share-action pt-4 m-0">
               <div class="col-sm-6 mb-1">
