@@ -1,20 +1,21 @@
 <template>
   <div class="blog">
     <div class="slider products-slider text-center">
-      <img class="img-fluid" src="@/assets/img/bg_3.png">
+      <img @load="handleLoad" class="img-fluid" src="@/assets/img/bg_3.png">
       <div class="slider-text">
         <h1 class="font-weight-lighter">{{ $t('menu.blog') }}</h1>
         <hr/>
       </div>
     </div>
-    <div class="row m-0">
-      <div class="row m-0 blog-green-back">
-      </div>
+    <!-- <div class="row m-0">
+      <div class="col-12 blog-green-back"></div>
+    </div> -->
+    <div class="row m-0 blog-green-next">
       <div class="col-md-6 col-lg-4 col-xl-3" v-for="(blog, index) in showList" :key="index">
         <div class="one-blog-container py-3">
-          <img :src="`/img/blog/${blog.thumb_img}`" class="img-fluid"/>
-          <h3>{{ blog.title[$i18n.locale] }}</h3>
-          <p>{{ getBlogText(blog.description[$i18n.locale]) }}</p>
+          <img @load="handleLoad" :src="`/img/blog/${blog.thumb_img}`" class="img-fluid"/>
+          <h3 v-html="blog.title[$i18n.locale]"></h3>
+          <p v-html="getBlogText(blog.description[$i18n.locale])"></p>
           <div class="blog-action">
             <span class="blog-date span-number">{{ blog.blog_date }}</span>
             <span class="blog-comment span-number">{{ blog.comment }}</span>
@@ -41,12 +42,12 @@ export default {
           thumb_img: 'blog_1.png',
           origin_img: 'blog_1_origin.png',
           title: {
-            en: 'iKleeniK Announces the Launch of Mobile Application Jamel®',
-            ar: 'تعلن أيكلينيك عن إطلاق تطبيق الهاتف المحمول جمل®'
+            en: 'iKleeniK Announces the Launch of Mobile Application Jamel<sup>®</sup>',
+            ar: 'تعلن أيكلينيك عن إطلاق تطبيق الهاتف المحمول جمل<sup>®</sup>'
           },
           description: {
-            en: 'iKleeniK Limited, New Zealand is excited to announce the launch of mobile application Jamel®, the first Android and iOS fitness app for people with diabetes in English and Arabic.',
-            ar: 'يسر أيكلينيك المحدودة  ، نيوزيلندا أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل ® ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
+            en: 'iKleeniK Limited is excited to announce the launch of mobile application Jamel<sup>®</sup>, the first Android and iOS fitness app for people with diabetes in English and Arabic.',
+            ar: 'يسر أيكلينيك المحدودة  ، نيوزيلندا أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل <sup>®</sup> ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
           },
           content: {
             en: 'At iKleeniK, we are working on a broad range of technologies to make health information more accessible beyond traditional care settings including mHealth, big data, artificial intelligence systems for digital diagnostics, digital therapeutics and clinical decision support solutions, as well as the advanced algorithms that are increasingly capable of supporting those solutions. At our core R&D, we believe digital health represents a much-needed connection between data science and healthcare, one that more comprehensively connects the dots for better, more informed health decisions and more personalized patient care.',
@@ -73,16 +74,19 @@ export default {
       ],
       showList: [],
       showCnt: 4,
+      cntLoadedImage: 0
+    }
+  },
+  watch: {
+    cntLoadedImage(val) {
+      if (val >= this.blogList.length + 1) {
+        this.$store.dispatch('setStatus', '')  
+      }
     }
   },
   created() {
     this.$store.dispatch('setStatus', 'loading')
     this.showMore()
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.$store.dispatch('setStatus', '')
-    })
   },
   methods: {
     getBlogText(str) {
@@ -98,6 +102,9 @@ export default {
         this.showCnt = this.blogList.length
       }
       this.showList = this.blogList.slice(0, this.showCnt)
+    },
+    handleLoad() {
+      this.cntLoadedImage++
     }
   }
   

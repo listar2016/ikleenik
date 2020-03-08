@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">{{ product.title[$i18n.locale] }}</h5>
+          <h5 class="modal-title" v-html="product.title[$i18n.locale]"></h5>
           <button type="button" class="close" aria-label="Close" @click="$emit('close')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -14,7 +14,7 @@
               <img :src="`/img/${product.logo[$i18n.locale]}`" class="img-fluid"/>
             </div>
             <div class="one-products-content">
-              <h2>{{ product.title[$i18n.locale] }}</h2>
+              <h2 v-html="product.title[$i18n.locale]"></h2>
               <div class="hr-container">
                 <hr/>
               </div>

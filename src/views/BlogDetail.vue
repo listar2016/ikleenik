@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <div class="slider products-slider text-center">
-      <img class="img-fluid" src="@/assets/img/bg_3.png">
+      <img @load="handleLoad" class="img-fluid" src="@/assets/img/bg_3.png">
     </div>
     <!-- <div class="row m-0">
       <div class="row m-0 blog-green-back">
@@ -20,7 +20,7 @@
             <hr/>
             <h5 class="font-weight-lighter text-center px-2">{{ blog.description[$i18n.locale] }}</h5>
             <div class="blog-img text-center py-5">
-              <img :src="`/img/blog/${blog.origin_img}`" class="img-fluid"/>
+              <img @load="handleLoad"  :src="`/img/blog/${blog.origin_img}`" class="img-fluid"/>
             </div>
             <div class="blog-content px-sm-5">
               <p>{{ blog.content[$i18n.locale] }}</p>
@@ -94,16 +94,24 @@ export default {
     return {
       user_name: '',
       email: '',
-      comment: ''
+      comment: '',
+      cntLoadedImage: 0
+    }
+  },
+  watch: {
+    cntLoadedImage(val) {
+      if (val >= 2) {
+        this.$store.dispatch('setStatus', '')  
+      }
     }
   },
   created() {
     this.$store.dispatch('setStatus', 'loading')
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$store.dispatch('setStatus', '')
-    })
-  },
+  methods: {
+    handleLoad() {
+      this.cntLoadedImage++
+    }
+  }
 }
 </script>

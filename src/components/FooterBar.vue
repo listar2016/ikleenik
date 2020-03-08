@@ -18,7 +18,7 @@
     <div class="row m-0 bg-dark py-5 px-md-2 px-lg-5">
       <div class="col-lg-5 logo-copyright">
         <img :src="imgLogo[$i18n.locale]">
-        <p class="mt-3"><span class="span-number">© 2019 - 2020</span> {{ $t('footer.copy_right') }}</p>
+        <p class="mt-3" v-html="$t('footer.copy_right')"></p>
       </div>
       <div class="col-lg-7">
         <div class="row footer-link">
@@ -29,16 +29,16 @@
             </div>
             <ul>
               <li>
-                <router-link class="nav-link" :to="{name: 'products'}">{{ $t('menu.products') }}</router-link>
+                <a class="nav-link" href="#" @click.prevent="checkUrl('products')">{{ $t('menu.products') }}</a>
               </li>
               <li>
-                <router-link class="nav-link" :to="{name: 'blog'}">{{ $t('menu.blog') }}</router-link>
+                <a class="nav-link" href="#" @click.prevent="checkUrl('blog')">{{ $t('menu.blog') }}</a>
               </li>
               <li>
-                <router-link class="nav-link" :to="{name: 'career'}">{{ $t('menu.careers') }}</router-link>
+                <a class="nav-link" href="#" @click.prevent="checkUrl('career')">{{ $t('menu.careers') }}</a>
               </li>
               <li>
-                <router-link class="nav-link" :to="{name: 'contact'}">{{ $t('menu.contact') }}</router-link>
+                <a class="nav-link" href="#" @click.prevent="checkUrl('contact')">{{ $t('menu.contact') }}</a>
               </li>
             </ul>
           </div>
@@ -60,7 +60,7 @@
   </footer>
 </template>
 <script>
-import imgLogo_en from '@/assets/img/logo_white.png'
+import imgLogo_en from '@/assets/img/logo_white_1.svg'
 import imgLogo_ar from '@/assets/img/logo_white_ar.png'
 export default {
   data() {
@@ -71,5 +71,18 @@ export default {
       }
     }
   },
+  methods: {
+    checkUrl(url) {
+      if (this.$route.name === url) {
+        window.scrollTo({
+          top: 0,
+          left: 0, 
+          behavior: 'smooth' 
+        })
+      } else {
+        this.$router.push({name: url})
+      }
+    }
+  }
 }
 </script>

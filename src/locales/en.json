@@ -31,7 +31,7 @@
     "expertise": "Expertise",
     "products_title": "Products",
     "products_klatu": "Klatu",
-    "products_desc": "Mo-fiD® is the world’s first interoperable and unifying multilingual mobile diabetes monitoring and self –management system with preferred native language options.",
+    "products_desc": "Mo-fiD<sup>®</sup> is the world’s first interoperable and unifying multilingual mobile diabetes monitoring and self –management system with preferred native language options.",
     "innovation_title": "Innovation",
     "innovation_desc": "Development of mobile devices is the key driving force behind our research vision at iKleeniK . We believe the role of 5G together with smart wearable sensors will play pivotal role in the future of personalized healthcare systems and be part of everyday life for many people.",
     "research_title": "Research",
@@ -53,7 +53,7 @@
   },
   "footer": {
     "title": "We have a vision for better healthcare tomorrow.",
-    "copy_right": "iKleeniK Limited, All Rights Reserved",
+    "copy_right": "© 2019 - 2020 iKleeniK Limited, All Rights Reserved",
     "quick_link": "Quick Links",
     "newsletter": "Newsletter",
     "email": "Email...",
@@ -62,7 +62,7 @@
   "products": {
     "title": "Products",
     "sub_title": "What we have developed",
-    "description": "iKleeniK current focus is on interfacing of personal medical devices for chronic disease management using smart mobile and low energy Bluetooth® technologies as part of our strategy in development of digital healthcare industry"
+    "description": "iKleeniK current focus is on interfacing of personal medical devices for chronic disease management using smart mobile and low energy Bluetooth<sup>®</sup> technologies as part of our strategy in development of digital healthcare industry"
   },
   "contact": {
     "name": "Name...",

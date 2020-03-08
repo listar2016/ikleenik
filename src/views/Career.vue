@@ -1,7 +1,7 @@
 <template>
   <div class="career">
     <div class="slider career-slider">
-      <img class="img-fluid" src="@/assets/img/bg_4.png">
+      <img @load="handleLoad" class="img-fluid" src="@/assets/img/bg_4.png">
       <div class="slider-text">
         <h1 class="font-weight-lighter">{{ $t('menu.careers') }}</h1>
         <div class="hr-container">
@@ -14,7 +14,7 @@
     <div class="row m-0 career-container">
       <div class="col-lg-4 career-img-container">
           <div class="career-img">
-            <img class="img-fluid" src="@/assets/img/computer.png">
+            <img @load="handleLoad" class="img-fluid" src="@/assets/img/computer.png">
           </div>
       </div>
       <div class="col-lg-8 career-description">
@@ -31,13 +31,25 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      cntLoadedImage: 0
+    }
+  },
+  watch: {
+    cntLoadedImage(val) {
+      if (val >= 2) {
+        this.$store.dispatch('setStatus', '')  
+      }
+    }
+  },
   created() {
     this.$store.dispatch('setStatus', 'loading')
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$store.dispatch('setStatus', '')
-    })
-  },
+  methods: {
+    handleLoad() {
+      this.cntLoadedImage++
+    }
+  }
 }
 </script>

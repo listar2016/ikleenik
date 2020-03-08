@@ -209,6 +209,7 @@ body {
 .icon-title-desc {
   display: flex;
   .icon-content {
+    text-align: center;
     width: 70px;
   }
   .title-desc-content {
@@ -220,10 +221,10 @@ body {
 }
 
 .products-title-container {
-  background-color: $green-color;
+  // background-color: $green-color;
   text-align: center;
   hr {
-    background: white;
+    background: $green-color;
     width: 100px;
     height: 2px;
   }
@@ -304,11 +305,14 @@ body {
 
 /** Blog Style **/
 .blog-green-back {
-  position: absolute;
-  width: 100%;
+  // position: absolute;
+  // width: 100%;
   height: 200px;
   background-color: $green-color;
 }
+// .blog-green-next {
+//   margin-top: -200px !important;
+// }
 .one-blog-container {
   h3 {
     margin: 1rem 0;
@@ -357,7 +361,6 @@ body {
     }
   }
   p {
-    color: $dark-grey-color;
     font-size: 1.5rem;
     line-height: 2rem;
   }

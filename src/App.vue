@@ -3,9 +3,11 @@
     <loading 
 			:active.sync="isLoading" 
 		></loading>
-    <div class="container-fluid" :class="{'no-loading': isLoading}">
+    <div class="container-fluid p-0" :class="{'no-loading': isLoading}">
       <nav-bar></nav-bar>
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
       <footer-bar></footer-bar>
       <vm-back-top></vm-back-top>
     </div>

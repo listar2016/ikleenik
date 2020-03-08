@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
     <div class="slider products-slider text-center">
-      <img class="img-fluid" src="@/assets/img/bg_5.png">
+      <img @load="handleLoad" class="img-fluid" src="@/assets/img/bg_5.png">
       <div class="slider-text">
         <h1 class="font-weight-lighter">{{ $t('menu.contact') }}</h1>
         <hr/>
@@ -43,16 +43,14 @@ export default {
   created() {
     this.$store.dispatch('setStatus', 'loading')
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$store.dispatch('setStatus', '')
-    })
-  },
   methods: {
     async recaptcha() {
       await this.$recaptchaLoaded()
       const token = await this.$recaptcha('login')
       console.log(token)
+    },
+    handleLoad() {
+      this.$store.dispatch('setStatus', '')
     }
   },
 }

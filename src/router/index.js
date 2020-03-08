@@ -40,11 +40,17 @@ const routes = [
     name: 'blog-detail',
     component: BlogDetail,
     props: true
+  },
+  { 
+    path: "*",
+    name: 'not-found',
+    component: Home 
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
+  // mode: 'hash',
   base: process.env.BASE_URL,
   routes
 })

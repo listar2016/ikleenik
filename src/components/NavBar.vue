@@ -34,7 +34,7 @@
   </nav>
 </template>
 <script>
-import imgLogo_en from '@/assets/img/logo_white.png'
+import imgLogo_en from '@/assets/img/logo_white_1.svg'
 import imgLogo_ar from '@/assets/img/logo_white_ar.png'
 export default {
   data() {

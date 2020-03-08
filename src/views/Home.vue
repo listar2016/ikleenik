@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="slider home-slider text-center">
-      <img class="img-fluid" src="@/assets/img/bg_1.png">
+      <img @load="handleLoad" class="img-fluid" src="@/assets/img/bg_1.png">
       <div class="slider-text">
         <h1 class="font-weight-lighter">{{ $t('home.slider_title') }}</h1>
         <h4 class="font-weight-lighter">{{ $t('home.slider_subtitle') }}</h4>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="col-lg-6 p-0">
-        <img class="img-fluid" src="@/assets/img/home_1.png" />
+        <img @load="handleLoad" class="img-fluid" src="@/assets/img/home_1.png" />
       </div>
     </div>
     <div class="row m-0 bg-grey">
@@ -41,14 +41,14 @@
         </div>
         <div class="col-md-4 my-5">
           <div class="bg-icon mx-auto">
-            <img src="@/assets/img/cognitive_evolvement_1.png" style="width: 50%"/>
+            <img src="@/assets/img/cognitive_evolvement_1.png" class="w-50"/>
           </div>
           <h4>{{ $t('home.cat_2_title') }}</h4>
           <p>{{ $t('home.cat_2_desc') }}</p>
         </div>
         <div class="col-md-4 my-5">
           <div class="bg-icon mx-auto">
-            <img src="@/assets/img/big_data.png"/>
+            <img src="@/assets/img/big_data.png" class="w-50"/>
           </div>
           <h4>{{ $t('home.cat_3_title') }}</h4>
           <p>{{ $t('home.cat_3_desc') }}</p>
@@ -82,7 +82,7 @@
           <div class="col-xl-6 p-0 bg-grey">
             <div class="one-span-container">
               <div class="one-span-content">
-                <img src="@/assets/img/phone_blutooth.png">
+                <img @load="handleLoad" src="@/assets/img/phone_blutooth.png">
               </div>
             </div>
           </div>
@@ -96,16 +96,14 @@
       </div>
       <div class="col-md-5 product-img-container">
           <div class="product-img">
-            <img class="img-fluid" src="@/assets/img/mofid_device.png">
+            <img @load="handleLoad" class="img-fluid" src="@/assets/img/mofid_device.png">
           </div>
       </div>
       <div class="col-md-7 product-description">
-        <div class="logo-content">
+        <div class="logo-content d-flex">
           <img :src="imgMofidLogo[$i18n.locale]"/>
         </div>
-        <p>
-          {{ $t('home.products_desc') }}
-        </p>
+        <p v-html="$t('home.products_desc')"></p>
         <router-link class="btn btn-white" :to="{name: 'products'}">{{ $t('menu.more') }}</router-link>
       </div>
     </div>
@@ -114,31 +112,29 @@
         <div class="center-content bg-white">
           <div class="home-main-content">
             <div class="bg-icon">
-              <img src="@/assets/img/start-up.png"/>
+              <img src="@/assets/img/start-up.png" class="w-50"/>
             </div>
             <h1>{{ $t('home.innovation_title') }}</h1>
             <div class="hr-container">
               <hr/>
             </div>
-            <p>
-              {{ $t('home.innovation_desc') }}
-            </p>
+            <p v-html="$t('home.innovation_desc')"></p>
           </div>
         </div>
       </div>
       <div class="col-lg-6 p-0">
-        <img src="@/assets/img/home_2.png" class="img-fluid"/>
+        <img @load="handleLoad" src="@/assets/img/home_2.png" class="img-fluid"/>
       </div>
     </div>
     <div class="row m-0">
       <div class="col-lg-6 p-0">
-        <img src="@/assets/img/home_3.png" class="img-fluid"/>
+        <img @load="handleLoad" src="@/assets/img/home_3.png" class="img-fluid"/>
       </div>
       <div class="col-lg-6 center-container bg-grey">
         <div class="center-content bg-white">
           <div class="home-main-content">
             <div class="bg-icon">
-              <img src="@/assets/img/research.png"/>
+              <img src="@/assets/img/research.png" class="w-50"/>
             </div>
             <h1>{{ $t('home.research_title') }}</h1>
             <div class="hr-container">
@@ -240,7 +236,7 @@
     </div>
     <div class="row m-0">
       <div class="col-lg-6 col-xl-4 p-0 bg-dark text-white">
-        <div class="one-span-container">
+        <div class="one-span-container border-0">
           <div class="one-span-content">
             <h1>{{ $t('home.latest_news') }}<span class="text-green">...</span></h1>
           </div>
@@ -249,13 +245,13 @@
       <div class="col-lg-6 col-xl-4 p-0" v-for="(news, index) in latestNews" :key="index">
         <div class="one-span-container">
           <div class="one-span-content">
-            <p>{{ news.location[$i18n.locale] }} / <span class="span-number">{{ news.date }}</span></p>
-            <h4>{{ news.title[$i18n.locale] }}</h4>
+            <p><span class="span-number">{{ news.date }}</span></p>
+            <h4 v-html="news.title[$i18n.locale]"></h4>
             <div class="hr-container">
               <hr/>
             </div>
-            <p>{{ news.description[$i18n.locale] }}</p>
-            <a href="#" class="read-more-link">{{ $t('menu.read_more') }}</a>
+            <p v-html="news.description[$i18n.locale]"></p>
+            <router-link class="read-more-link" :to="{name: 'blog'}">{{ $t('menu.read_more') }}</router-link>
           </div>
         </div>
       </div>
@@ -304,12 +300,12 @@ export default {
           },
           date: '15.6.2019',
           title: {
-            en: 'iKleeniK Announces the Launch of Mobile Application Jamel®',
-            ar: 'تعلن أيكلينيك عن إطلاق تطبيق الهاتف المحمول جمل®'
+            en: 'iKleeniK Announces the Launch of Mobile Application Jamel<sup>®</sup>',
+            ar: 'تعلن أيكلينيك عن إطلاق تطبيق الهاتف المحمول جمل<sup>®</sup>'
           },
           description: {
-            en: 'iKleeniK Limited, New Zealand is excited to announce the launch of mobile application Jamel®, the first Android and iOS fitness app for people with diabetes in English and Arabic.',
-            ar: 'يسر أيكلينيك المحدودة  ، نيوزيلندا أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل ® ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
+            en: 'iKleeniK Limited is excited to announce the launch of mobile application Jamel<sup>®</sup>, the first Android and iOS fitness app for people with diabetes in English and Arabic.',
+            ar: 'يسر أيكلينيك المحدودة  ، نيوزيلندا أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل <sup>®</sup> ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
           }
         },
       ],
@@ -326,8 +322,8 @@ export default {
             ar: 'يجمع فريقنا بين خبرة واسعة من التقنيات الناشئة في مجال إنترنت الأشياء وبين الخبرة في مجال الأعمال والابتكار.'
           },
           full_description: {
-            en: 'With many healthcare providers are struggling under the dual pressures of a growing demand for its services and chronic underfunding, the Internet of Things can help to make healthcare more efficient by equipping the patients with online sensors to monitor their environment and an internet connection to communicate, the Internet of Things gives healthcare providers greater ability to gather data on their patients and report back in real time. <br/><br/> The IoT presents big benefits for patient care by enabling hospitals to track and monitor patients from the moment they arrived at hospital -- or even in the home before that -- with real-time data from sensors being automatically added to patient records without the need for nurses to take readings or update charts. At a more prosaic level, our IoT vision is allow the healthcare provider to track the vitals more effectively. iKleeniK aims to help users to monitor their health and wellbeing, and alert health professionals to step in when needed. Mo-fiD®, our diabetes digital platform, is developed not only to help diabetics get a better handle on their condition, but has only a minimal IoT component, with links to internet-enabled glucose monitors.',
-            ar: 'نظرًا لمعاناة  العديد من مقدمي الرعاية الصحية في ظل الضغوط المزدوجة للطلب المتزايد على خدماتهم ونقص التمويل المزمن ، يمكن لإنترنت الأشياء المساعدة في جعل الرعاية الصحية أكثر فاعلية من خلال تزويد المرضى بأجهزة استشعار عبر الإنترنت لمراقبة بيئتهم واتصال بالإنترنت للتواصل ، يمنح إنترنت الأشياء لمقدمي الرعاية الصحية قدرة أكبر على جمع البيانات عن مرضاهم والإبلاغ عنها في الوقت الفعلي.<br/><br/>يقدم إنترنت الأشياء (IoT) فوائد كبيرة لرعاية المرضى من خلال تمكين المستشفيات من تتبع المرضى ومراقبتهم منذ لحظة وصولهم إلى المستشفى - أو حتى في المنزل قبل ذلك - مع إضافة بيانات تلقائيًا في الوقت الفعلي من أجهزة الاستشعار  إلى سجلات المرضى دون الحاجة للممرضات لاتخاذ قراءات أو تحديث الرسوم البيانية. على مستوى أكثر شفافية ، تسمح رؤيتنا في إنترنت الأشياء لمقدمي الرعاية الصحية بتتبع العوامل الحيوية بفعالية أكبر. يهدف أيكلينيك إلى مساعدة المستخدمين على مراقبة صحتهم ورفاهيتهم ، وتنبيه المختصين بالمجال الصحي إلى التدخل عند الحاجة.<br/></br/>تم تطوير منصتنا الرقمية لمرض السكري ،مو-فيد ® ليس فقط لمساعدة مرضى السكري على التعامل بشكل أفضل مع حالتهم ، ولكن أيضًا عبر إنترنت الأشياء المجهز  بروابط لمقاييس الجلوكوز الممكّنة عبر الإنترنت.'
+            en: 'With many healthcare providers are struggling under the dual pressures of a growing demand for its services and chronic underfunding, the Internet of Things can help to make healthcare more efficient by equipping the patients with online sensors to monitor their environment and an internet connection to communicate, the Internet of Things gives healthcare providers greater ability to gather data on their patients and report back in real time. <br/><br/> The IoT presents big benefits for patient care by enabling hospitals to track and monitor patients from the moment they arrived at hospital -- or even in the home before that -- with real-time data from sensors being automatically added to patient records without the need for nurses to take readings or update charts. At a more prosaic level, our IoT vision is allow the healthcare provider to track the vitals more effectively. iKleeniK aims to help users to monitor their health and wellbeing, and alert health professionals to step in when needed. Mo-fiD<sup>®</sup>, our diabetes digital platform, is developed not only to help diabetics get a better handle on their condition, but has only a minimal IoT component, with links to internet-enabled glucose monitors.',
+            ar: 'نظرًا لمعاناة  العديد من مقدمي الرعاية الصحية في ظل الضغوط المزدوجة للطلب المتزايد على خدماتهم ونقص التمويل المزمن ، يمكن لإنترنت الأشياء المساعدة في جعل الرعاية الصحية أكثر فاعلية من خلال تزويد المرضى بأجهزة استشعار عبر الإنترنت لمراقبة بيئتهم واتصال بالإنترنت للتواصل ، يمنح إنترنت الأشياء لمقدمي الرعاية الصحية قدرة أكبر على جمع البيانات عن مرضاهم والإبلاغ عنها في الوقت الفعلي.<br/><br/>يقدم إنترنت الأشياء (IoT) فوائد كبيرة لرعاية المرضى من خلال تمكين المستشفيات من تتبع المرضى ومراقبتهم منذ لحظة وصولهم إلى المستشفى - أو حتى في المنزل قبل ذلك - مع إضافة بيانات تلقائيًا في الوقت الفعلي من أجهزة الاستشعار  إلى سجلات المرضى دون الحاجة للممرضات لاتخاذ قراءات أو تحديث الرسوم البيانية. على مستوى أكثر شفافية ، تسمح رؤيتنا في إنترنت الأشياء لمقدمي الرعاية الصحية بتتبع العوامل الحيوية بفعالية أكبر. يهدف أيكلينيك إلى مساعدة المستخدمين على مراقبة صحتهم ورفاهيتهم ، وتنبيه المختصين بالمجال الصحي إلى التدخل عند الحاجة.<br/></br/>تم تطوير منصتنا الرقمية لمرض السكري ،مو-فيد <sup>®</sup> ليس فقط لمساعدة مرضى السكري على التعامل بشكل أفضل مع حالتهم ، ولكن أيضًا عبر إنترنت الأشياء المجهز  بروابط لمقاييس الجلوكوز الممكّنة عبر الإنترنت.'
           }
         },
         {
@@ -359,7 +355,15 @@ export default {
           }
         }
       ],
-      spanEx: {}
+      spanEx: {},
+      cntLoadedImage: 0
+    }
+  },
+  watch: {
+    cntLoadedImage(val) {
+      if (val >= 6) {
+        this.$store.dispatch('setStatus', '')  
+      }
     }
   },
   created() {
@@ -383,6 +387,9 @@ export default {
     showSpanExpertise(val) {
       this.spanEx = val
       this.isSpanExpertise = true
+    },
+    handleLoad() {
+      this.cntLoadedImage++
     }
   }
 }
