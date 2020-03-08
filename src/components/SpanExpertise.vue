@@ -2,7 +2,7 @@
   <div class="modal fade show modal-home-working">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-primary">
           <h5 class="modal-title">{{ spanEx.title[$i18n.locale] }}</h5>
           <button type="button" class="close" aria-label="Close" @click="$emit('closeSpanExpertise')">
             <span aria-hidden="true">&times;</span>

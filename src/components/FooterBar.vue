@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="row m-0 bg-dark py-5 px-md-2 px-lg-5">
+    <div class="row m-0 bg-dark py-5 px-md-2 px-lg-5" style="padding-bottom: 80px !important">
       <div class="col-lg-5 logo-copyright">
         <img :src="imgLogo[$i18n.locale]">
         <p class="mt-3" v-html="$t('footer.copy_right')"></p>
@@ -48,27 +48,46 @@
               <hr/>
             </div>
             <div class="input-group">
-              <input type="text" class="form-control" :placeholder="$t('footer.email')" :aria-label="$t('footer.email')">
+              <input type="text" class="form-control" :placeholder="$t('footer.email')" :aria-label="$t('footer.email')" v-model="email">
               <div class="input-group-append">
-                <a href="#" class="btn btn-success text-uppercase">{{ $t('footer.subscribe') }}</a>
+                <a href="#" class="btn btn-success text-uppercase" @click.prevent="sendSubscribe">{{ $t('footer.subscribe') }}</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <alert-form
+      v-if="isShowForm"
+      :modal-data="modalData"
+      @close="isShowForm=false"
+    ></alert-form>
   </footer>
 </template>
 <script>
 import imgLogo_en from '@/assets/img/logo_white_1.svg'
 import imgLogo_ar from '@/assets/img/logo_white_ar.png'
+import AlertForm from '@/components/AlertForm'
+// import axios from 'axios'
 export default {
+  components: {
+    AlertForm
+  },
   data() {
     return {
       imgLogo: {
         en: imgLogo_en,
         ar: imgLogo_ar
-      }
+      },
+      isShowForm: false,
+      modalData: {
+        type: '',
+        title: '',
+        description: ''
+      },
+      email: '',
+      // eslint-disable-next-line
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
     }
   },
   methods: {
@@ -81,6 +100,18 @@ export default {
         })
       } else {
         this.$router.push({name: url})
+      }
+    },
+    sendSubscribe() {
+      if (this.reg.test(this.email)) {
+        console.log(this.email)
+      } else {
+        this.modalData = {
+          type: 'error',
+          title: 'Email Error',
+          description: 'Please enter valid email address!'
+        }
+        this.isShowForm = true
       }
     }
   }

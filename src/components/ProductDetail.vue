@@ -2,7 +2,7 @@
   <div class="modal fade show modal-product">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-primary">
           <h5 class="modal-title" v-html="product.title[$i18n.locale]"></h5>
           <button type="button" class="close" aria-label="Close" @click="$emit('close')">
             <span aria-hidden="true">&times;</span>

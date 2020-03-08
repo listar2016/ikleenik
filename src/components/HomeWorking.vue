@@ -2,7 +2,7 @@
   <div class="modal fade show modal-home-working">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header bg-primary">
           <h5 class="modal-title">{{ $t('home.working_title') }}</h5>
           <button type="button" class="close" aria-label="Close" @click="$emit('closeHomeWorking')">
             <span aria-hidden="true">&times;</span>
