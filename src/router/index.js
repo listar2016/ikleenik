@@ -6,6 +6,7 @@ import Blog from '../views/Blog.vue'
 import Career from '../views/Career.vue'
 import Contact from '../views/Contact.vue'
 import BlogDetail from '../views/BlogDetail.vue'
+import Subscribe from '../views/Subscribe.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,12 @@ const routes = [
     path: '/blog-detail',
     name: 'blog-detail',
     component: BlogDetail,
+    props: true
+  },
+  {
+    path: '/newsletter/:action/:token',
+    name: 'subscribe',
+    component: Subscribe,
     props: true
   },
   { 

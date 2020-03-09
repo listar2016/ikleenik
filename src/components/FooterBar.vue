@@ -68,7 +68,7 @@
 import imgLogo_en from '@/assets/img/logo_white_1.svg'
 import imgLogo_ar from '@/assets/img/logo_white_ar.png'
 import AlertForm from '@/components/AlertForm'
-// import axios from 'axios'
+import axios from 'axios'
 export default {
   components: {
     AlertForm
@@ -104,12 +104,65 @@ export default {
     },
     sendSubscribe() {
       if (this.reg.test(this.email)) {
-        console.log(this.email)
+        const formData = new FormData()
+        formData.append('action', 'register')
+        formData.append('email', this.email)
+        axios.post('/subscribe.php', formData)
+          .then((response) => {
+            if (response.data.status === "ok") {
+              this.modalData = {
+                type: 'success',
+                title: { 
+                  en: 'Subscribe',
+                  ar: 'اشترك'
+                },
+                description: {
+                  en: "Thank you.<br/>You've just been sent an email to confirm your email address.<br/>Please click on the link in this email to confirm your subscription.",
+                  ar: "Thank you.<br/>You've just been sent an email to confirm your email address.<br/>Please click on the link in this email to confirm your subscription."
+                }
+              }
+              this.isShowForm = true
+            } else {
+              this.modalData = {
+                type: 'error',
+                title: { 
+                  en: 'Subscribe',
+                  ar: 'اشترك'
+                },
+                description: {
+                  en: "Failed to subscribe.",
+                  ar: "Failed to subscribe."
+                }
+              }
+              this.isShowForm = true
+              console.log(response.data.message)
+            }
+          })
+          .catch((err) => {
+            this.modalData = {
+              type: 'error',
+              title: { 
+                en: 'Subscribe',
+                ar: 'اشترك'
+              },
+              description: {
+                en: "Failed to subscribe.",
+                ar: "Failed to subscribe.",
+              }
+            }
+            console.log(err)
+          })
       } else {
         this.modalData = {
           type: 'error',
-          title: 'Email Error',
-          description: 'Please enter valid email address!'
+          title: {
+            en: 'Email Error',
+            ar: 'Email Error'
+          },
+          description: {
+            en: 'Please enter valid email address!',
+            ar: 'Please enter valid email address!'
+          }
         }
         this.isShowForm = true
       }
