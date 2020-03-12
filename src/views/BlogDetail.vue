@@ -20,7 +20,7 @@
             <hr/>
             <h5 class="font-weight-lighter text-center px-2" v-html="blog.description[$i18n.locale]"></h5>
             <div class="blog-img text-center py-5">
-              <img @load="handleLoad"  :src="`/img/blog/${blog.origin_img}`" class="img-fluid"/>
+              <img @load="handleLoad" :src="`/img/blog/${blog.origin_img}`" class="img-fluid"/>
             </div>
             <div class="blog-content px-sm-5">
               <p v-html="blog.content[$i18n.locale]"></p>
@@ -30,17 +30,17 @@
                 <div class="left-action">
                   <h5 class="share-title">{{ $t('blog.share') }}</h5>
                   <div class="social-icon-container bg-green">
-                    <img src="@/assets/img/facebook-logo.png">
+                    <img src="@/assets/img/facebook-logo.png" class="w-25">
                   </div>
                   <div class="social-icon-container bg-green">
-                    <img src="@/assets/img/twitter-logo.png">
+                    <img src="@/assets/img/twitter-logo.png" class="w-50">
                   </div>
                 </div>
               </div>
               <div class="col-sm-6 mb-1 right-action">
                 <h5 class="like-title">{{ $t('blog.like') }}</h5>
                 <div class="social-icon-container">
-                  <img src="@/assets/img/ic_favorite_lg.png"/>
+                  <img src="@/assets/img/ic_favorite_lg.svg"/>
                 </div>
                 <h5 class="span-number">{{ blog.favorite }}</h5>
               </div>
@@ -51,7 +51,7 @@
             <h2 class="mb-4">{{ $t('blog.comments') }}</h2>
             <div class="col-12 one-comment" v-for="(comment, index) in blog.comments" :key="index">
               <div class="icon-container bg-primary">
-                <img src="@/assets/img/user_icon.png"/>
+                <img src="@/assets/img/user_icon.png" class="w-25"/>
               </div>
               <div class="comment-content">
                 <h5>{{ comment.name[$i18n.locale] }}</h5>
@@ -106,6 +106,10 @@ export default {
     }
   },
   created() {
+    if (!this.blog) {
+      this.$router.push({name: 'blog'})
+      return
+    }
     this.$store.dispatch('setStatus', 'loading')
   },
   methods: {

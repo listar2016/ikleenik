@@ -51,6 +51,24 @@
       }
     }
   }
+  #navbarSupportedContent {
+    display: none;
+  }
+  #navbarMobile {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    &.navbar-dark .navbar-nav .nav-link {
+      color: #6A6969;
+      border-bottom: 1px solid #DDDDDD;
+      text-align: center;
+      &.lang-link {
+        border: 0;
+        margin-bottom: 50px;
+        color: $green-color;
+      }
+    }
+  }
 }
 @media (min-width:768px) {
   .product-img-container{
@@ -98,12 +116,7 @@
   .home-main-content {
     padding: 2rem;
   }
-  #navbarSupportedContent {
-    position: absolute;
-    top: 77px;
-    // right: 30px;
-    // text-align: right;
-  }
+  
   .slider {
     background-repeat: no-repeat;
     background-position: center;

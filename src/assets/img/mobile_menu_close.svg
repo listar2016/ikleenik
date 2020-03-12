@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.985" height="16.985" viewBox="0 0 16.985 16.985">
+  <g id="close" transform="translate(-311.007 -32.007)">
+    <g id="close-2" data-name="close">
+      <path id="Rectangle_2" data-name="Rectangle 2" d="M311.007,47.494l15.487-15.486,1.5,1.5L312.506,48.993Z" fill="#333"/>
+      <path id="Rectangle_2_copy" data-name="Rectangle 2 copy" d="M311.007,33.506l1.5-1.5,15.487,15.486-1.5,1.5Z" fill="#333"/>
+    </g>
+    <path id="Color_Overlay" data-name="Color Overlay" d="M319.5,42l-6.994,6.994-1.5-1.5L318,40.5l-6.994-6.994,1.5-1.5L319.5,39l6.994-6.994,1.5,1.5L321,40.5l6.994,6.994-1.5,1.5Z" fill="#3bb44a"/>
+  </g>
+</svg>

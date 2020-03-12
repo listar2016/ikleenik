@@ -70,7 +70,8 @@
     "email": "Email...",
     "subject": "Subject...",
     "message": "Message...",
-    "send": "Send"
+    "send": "Send",
+    "recaptcha_err": "Your answer wasn't correct, please try again."
   },
   "careers": {
     "description" : "We are geared to growth and are always on the lookout for top-grade and experienced software and apps designers and developers. We offer you challenging tasks, leeway for your own initiatives, and favorable, inspirational oriented challenges so that you see the outcome of your achievements. If this appeals to you and you wish to join us, talk to us!",

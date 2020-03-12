@@ -12,7 +12,7 @@
       <div class="col-lg-6">
         <div class="home-main-content">
           <div class="bg-icon">
-            <img src="@/assets/img/mobile-phone_1.png" style="width: 50%"/>
+            <img src="@/assets/img/mobile-phone.png" class="w-50"/>
           </div>
           <h3>{{ $t('home.working_subtitle') }}</h3>
           <h1>{{ $t('home.working_title') }}</h1>
@@ -34,7 +34,7 @@
       <div class="row col-xl-9 mx-auto text-center">
         <div class="col-md-4 my-5">
           <div class="bg-icon mx-auto">
-            <img src="@/assets/img/deep_learning.png"/>
+            <img src="@/assets/img/deep_learning.png" class="w-50"/>
           </div>
           <h4>{{ $t('home.cat_1_title') }}</h4>
           <p>{{ $t('home.cat_1_desc') }}</p>
@@ -157,7 +157,7 @@
           <div class="col-lg-6">
             <div class="icon-title-desc">
               <div class="icon-content">
-                <img src="@/assets/img/mobile_health_solutions.png"/>
+                <img src="@/assets/img/mobile_health_solutions.svg"/>
               </div>
               <div class="title-desc-content">
                 <h4>{{ $t('home.wedo_1_title') }}</h4>
@@ -168,7 +168,7 @@
           <div class="col-lg-6">
             <div class="icon-title-desc">
               <div class="icon-content">
-                <img src="@/assets/img/chronic_disease_management.png"/>
+                <img src="@/assets/img/chronic_disease_management.svg"/>
               </div>
               <div class="title-desc-content">
                 <h4>{{ $t('home.wedo_2_title') }}</h4>
@@ -183,7 +183,7 @@
           <div class="col-lg-6">
             <div class="icon-title-desc">
               <div class="icon-content">
-                <img src="@/assets/img/digital_clinic_portals.png"/>
+                <img src="@/assets/img/digital_clinic_portals.svg"/>
               </div>
               <div class="title-desc-content">
                 <h4>{{ $t('home.wedo_3_title') }}</h4>
@@ -194,7 +194,7 @@
           <div class="col-lg-6">
             <div class="icon-title-desc">
               <div class="icon-content">
-                <img src="@/assets/img/electronic_patient_record.png"/>
+                <img src="@/assets/img/electronic_patient_record.svg"/>
               </div>
               <div class="title-desc-content">
                 <h4>{{ $t('home.wedo_4_title') }}</h4>
@@ -209,7 +209,7 @@
           <div class="col-lg-6">
             <div class="icon-title-desc">
               <div class="icon-content">
-                <img src="@/assets/img/wellbeing_mobile_apps.png"/>
+                <img src="@/assets/img/wellbeing_mobile_apps.svg"/>
               </div>
               <div class="title-desc-content">
                 <h4>{{ $t('home.wedo_5_title') }}</h4>
@@ -220,7 +220,7 @@
           <div class="col-lg-6">
             <div class="icon-title-desc">
               <div class="icon-content">
-                <img src="@/assets/img/assistive_technologies.png"/>
+                <img src="@/assets/img/assistive_technologies.svg"/>
               </div>
               <div class="title-desc-content">
                 <h4>{{ $t('home.wedo_6_title') }}</h4>
@@ -272,8 +272,8 @@
 <script>
 import HomeWorking from '../components/HomeWorking.vue'
 import SpanExpertise from '../components/SpanExpertise.vue'
-import imgMofidLogo_en from '@/assets/img/mofid_white.png'
-import imgMofidLogo_ar from '@/assets/img/mofid_white_ar.png'
+import imgMofidLogo_en from '@/assets/img/mofid_white.svg'
+import imgMofidLogo_ar from '@/assets/img/mofid_white_ar.svg'
 import {mapState} from 'vuex'
 export default {
   name: 'Home',

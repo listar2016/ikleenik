@@ -11,7 +11,7 @@
         <div class="modal-body">
           <div class="one-products-container">
             <div class="logo-container mb-1">
-              <img :src="`/img/${product.logo[$i18n.locale]}`" class="img-fluid"/>
+              <img :src="`/img/${product.logo[$i18n.locale]}`" style="max-width:100px;"/>
             </div>
             <div class="one-products-content">
               <h2 v-html="product.title[$i18n.locale]"></h2>

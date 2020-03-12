@@ -10,7 +10,7 @@
         </div>
         <div class="modal-body">
           <div class="bg-icon">
-            <img src="@/assets/img/mobile-phone.png" class="img-fluid"/>
+            <img src="@/assets/img/mobile-phone.svg" class="img-fluid"/>
           </div>
           <h3>{{ $t('home.working_subtitle') }}</h3>
           <h1>{{ $t('home.working_title') }}</h1>

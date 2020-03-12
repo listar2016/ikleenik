@@ -66,7 +66,7 @@
 </template>
 <script>
 import imgLogo_en from '@/assets/img/logo_white_1.svg'
-import imgLogo_ar from '@/assets/img/logo_white_ar.png'
+import imgLogo_ar from '@/assets/img/logo_white_ar.svg'
 import AlertForm from '@/components/AlertForm'
 import axios from 'axios'
 export default {
