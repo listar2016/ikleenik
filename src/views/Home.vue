@@ -81,8 +81,8 @@
           </div>
           <div class="col-xl-6 p-0 bg-grey">
             <div class="one-span-container">
-              <div class="one-span-content">
-                <img @load="handleLoad" src="@/assets/img/phone_blutooth.png">
+              <div class="one-span-content text-center">
+                <img @load="handleLoad" src="@/assets/img/phone_blutooth.png" class="w-50">
               </div>
             </div>
           </div>
