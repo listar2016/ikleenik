@@ -47,7 +47,7 @@ export default {
           },
           description: {
             en: 'iKleeniK Limited is excited to announce the launch of mobile application Jamel<sup>®</sup>, the first Android and iOS fitness app for people with diabetes in English and Arabic.',
-            ar: 'يسر أيكلينيك المحدودة  ، أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل <sup>®</sup> ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (Android ) وiOS للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
+            ar: 'يسر أيكلينيك المحدودة  ، أن تعلن عن إطلاق تطبيق الهاتف المحمول جمل <sup>®</sup> ، أول تطبيق للياقة البدنية يعمل بنظام أندرويد (<span class="span-number">Android</span> ) و<span class="span-number">iOS</span> للأشخاص الذين يعانون من مرض السكري باللغتين العربية والإنجليزية.'
           },
           content: {
             en: 'At iKleeniK, we are working on a broad range of technologies to make health information more accessible beyond traditional care settings including mHealth, big data, artificial intelligence systems for digital diagnostics, digital therapeutics and clinical decision support solutions, as well as the advanced algorithms that are increasingly capable of supporting those solutions. At our core R&D, we believe digital health represents a much-needed connection between data science and healthcare, one that more comprehensively connects the dots for better, more informed health decisions and more personalized patient care.',
