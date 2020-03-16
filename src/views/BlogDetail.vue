@@ -23,7 +23,7 @@
               <img @load="handleLoad" :src="`/img/blog/${blog.origin_img}`" class="img-fluid"/>
             </div>
             <div class="blog-content px-sm-5">
-              <p v-html="blog.content[$i18n.locale]"></p>
+              <div v-html="blog.content[$i18n.locale]"></div>
             </div>
             <div class="row blog-share-action pt-4 m-0">
               <div class="col-sm-6 mb-1">
