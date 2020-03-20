@@ -164,7 +164,7 @@ export default {
             },
             description: {
               en: "Thank you.<br/> Your comments saved successfully.",
-              ar: "Thank you.<br/> Your comments saved successfully.",
+              ar: "شكرا لكم. تم إرسال رسالتك بنجاح.",
             }
           }
             this.isShowForm = true
@@ -181,7 +181,7 @@ export default {
             },
             description: {
               en: "Failed.",
-              ar: "Failed.",
+              ar: "فشل.",
             }
           }
           console.log(err)

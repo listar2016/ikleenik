@@ -49,7 +49,7 @@ export default {
                 },
                 description: {
                   en: "Thank You <br/>Your subscription has been confirmed and you've been added to the newsletter.",
-                  ar: "Thank You <br/>Your subscription has been confirmed and you've been added to the newsletter."
+                  ar: "شكرا لك!<br/>تم تأكيد اشتراكك وتمت إضافتك إلى النشرة البريدية."
                 }
               }
               this.isShowForm = true
@@ -61,8 +61,8 @@ export default {
                   ar: 'اشترك'
                 },
                 description: {
-                  en: "Thank you. <br/> You have been successfully removed from this subscriber list and won't receive any further emails from us.",
-                  ar: "Thank you. <br/> You have been successfully removed from this subscriber list and won't receive any further emails from us."
+                  en: "Thank you! <br/>You have been successfully removed from our subscription list. You won't receive any further emails from us.",
+                  ar: "شكرا لك! <br/>لقد تم إلغاء اشتراكك بنجاح من قائمة الاشتراكات لدينا. لن تتلقى أي رسائل بريد إلكتروني أخرى منا."
                 }
               }
               this.isShowForm = true
@@ -76,7 +76,7 @@ export default {
               },
               description: {
                 en: "Failed to subscribe.",
-                ar: "Failed to subscribe.",
+                ar: "فشل الاشتراك",
               }
             }
             console.log(response.data.message)
@@ -91,7 +91,7 @@ export default {
             },
             description: {
               en: "Failed to subscribe.",
-              ar: "Failed to subscribe.",
+              ar: "فشل الاشتراك",
             }
           }
           console.log(err)

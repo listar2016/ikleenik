@@ -117,8 +117,8 @@ export default {
                   ar: 'اشترك'
                 },
                 description: {
-                  en: "Thank you.<br/>You've just been sent an email to confirm your email address.<br/>Please click on the link in this email to confirm your subscription.",
-                  ar: "Thank you.<br/>You've just been sent an email to confirm your email address.<br/>Please click on the link in this email to confirm your subscription."
+                  en: "Thank you! confirmation email is sent.<br/>Please check your inbox and confrim your email address.",
+                  ar: "شكرا لك! تم إرسال رسالة التأكيد.<br/>يرجى التحقق من بريدك الوارد وتأكيد عنوان بريدك الإلكتروني."
                 }
               }
               this.isShowForm = true
@@ -131,7 +131,7 @@ export default {
                 },
                 description: {
                   en: "Failed to subscribe.",
-                  ar: "Failed to subscribe."
+                  ar: "فشل الاشتراك"
                 }
               }
               this.isShowForm = true
@@ -147,7 +147,7 @@ export default {
               },
               description: {
                 en: "Failed to subscribe.",
-                ar: "Failed to subscribe.",
+                ar: "فشل الاشتراك",
               }
             }
             console.log(err)
@@ -157,11 +157,11 @@ export default {
           type: 'error',
           title: {
             en: 'Email Error',
-            ar: 'Email Error'
+            ar: 'خطأ في البريد الإلكتروني'
           },
           description: {
             en: 'Please enter valid email address!',
-            ar: 'Please enter valid email address!'
+            ar: 'الرجاء إدخال عنوان بريد إلكتروني صالح.'
           }
         }
         this.isShowForm = true
