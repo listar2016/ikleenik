@@ -5,9 +5,7 @@
 		></loading>
     <div class="container-fluid p-0" :class="{'no-loading': isLoading}">
       <nav-bar></nav-bar>
-      <keep-alive>
-        <router-view/>
-      </keep-alive>
+      <router-view/>
       <footer-bar></footer-bar>
       <vm-back-top></vm-back-top>
     </div>

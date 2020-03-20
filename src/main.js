@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 
 Vue.prototype.$http = Axios;
 const API_URL = process.env.API_URL || 'https://ikleenik.com/api'
+// const API_URL = process.env.API_URL || '//localhost/api'
 
 Vue.prototype.$http.defaults.baseURL = API_URL
 Vue.prototype.$http.defaults.headers.post['Accept'] = 'application/json';

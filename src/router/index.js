@@ -37,7 +37,7 @@ const routes = [
     component: Contact
   },
   {
-    path: '/blog-detail',
+    path: '/blog-detail/:id',
     name: 'blog-detail',
     component: BlogDetail,
     props: true

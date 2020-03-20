@@ -1,7 +1,4 @@
 module.exports = {
-  devServer: {
-    port: 80
-  },
   pluginOptions: {
     i18n: {
       locale: 'ar',
