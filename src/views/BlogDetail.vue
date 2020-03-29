@@ -34,7 +34,7 @@
                         <img src="@/assets/img/facebook-logo.png" class="w-25">
                       </div>
                     </a>
-                    <a :href="`https://twitter.com/intent/tweet?url=https//ikleenik.com/blog/${id}&text=${blog.title[$i18n.locale]}`" target="_blank">
+                    <a :href="`https://twitter.com/intent/tweet?text=${blog.title[$i18n.locale]}&url=https://ikleenik.com/blog/${id}`" target="_blank">
                       <div class="social-icon-container bg-green">
                         <img src="@/assets/img/twitter-logo.png" class="w-50">
                       </div>
