@@ -29,12 +29,12 @@
               <div class="col-sm-6 mb-1">
                 <div class="left-action">
                   <h5 class="share-title">{{ $t('blog.share') }}</h5>
-                    <a :href="`https://facebook.com/sharer/sharer.php?u=https://ikleenik.com/blog/${id}&title=${blog.title[$i18n.locale]}`" target="_blank">
+                    <a :href="`https://facebook.com/sharer/sharer.php?u=https://ikleenik.com/${$i18n.locale}/blog-detail/${id}&title=${blog.title[$i18n.locale]}`" target="_blank">
                       <div class="social-icon-container bg-green">
                         <img src="@/assets/img/facebook-logo.png" class="w-25">
                       </div>
                     </a>
-                    <a :href="`https://twitter.com/intent/tweet?text=${blog.title[$i18n.locale]}&url=https://ikleenik.com/blog/${id}`" target="_blank">
+                    <a :href="`https://twitter.com/intent/tweet?text=${blog.title[$i18n.locale]}&url=https://ikleenik.com/${$i18n.locale}/blog-detail/${id}`" target="_blank">
                       <div class="social-icon-container bg-green">
                         <img src="@/assets/img/twitter-logo.png" class="w-50">
                       </div>

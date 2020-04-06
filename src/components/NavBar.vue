@@ -107,6 +107,13 @@ export default {
   methods: {
     changeLang() {
       this.isMobileMenu = false
+      let curPath = this.$route.path
+      let aryPath = curPath.split('/')
+      let curLang = aryPath.length > 1 ? aryPath[1] : 'en'
+      aryPath[1] = curLang === 'en' ? 'ar': 'en'
+      let newPath = aryPath.join('/')
+      console.log(newPath)
+      this.$router.push(newPath)
       const html = window.document.documentElement
       document.querySelector('body').classList.toggle('rtl');
       if (this.$i18n.locale === 'en') {
